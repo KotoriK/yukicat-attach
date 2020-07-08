@@ -9,7 +9,7 @@
   },
   "author": "KotoriK",
   "license": "ISC",
-  "private":true,
+  "private": true,
   "dependencies": {
     "face-pack": "git+https://github.com/YukiCat-Dev/FacePack.git",
     "simple-img-modal": "git+https://github.com/KotoriK/simple-img-modal.git"
