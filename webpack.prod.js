@@ -45,9 +45,9 @@ module.exports = merge(common, {
                             esModule: true,
                         }
                     },
-                    'css-loader',
+                    'css-loader','sass-loader'
                     /*  'postcss-loader',
-                     'sass-loader', */
+                     , */
                 ],
             },
         ]

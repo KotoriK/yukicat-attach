@@ -8,7 +8,7 @@
         "strict": true,
         "alwaysStrict": true,
         "sourceMap": false,
-        "noImplicitReturns": true,
+        "noImplicitReturns": false,
         "noImplicitThis": true,
         "pretty": true,
         "jsx": "react",
