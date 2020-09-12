@@ -5,6 +5,7 @@ module.exports = {
     entry: {
         selector:'./src/fpselector.ts',
         display:'./src/display.ts',
+        pv:'./src/pageview.tsx'
     },
     devtool: 'inline-source-map',
 
