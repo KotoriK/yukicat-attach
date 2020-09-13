@@ -3,8 +3,7 @@ const webpack = require('webpack')
 module.exports = {
     //入口点
     entry: {
-        selector:'./src/fpselector.ts',
-        display:'./src/display.ts',
+        post:'./src/postpage.ts',
         pv:'./src/pageview.tsx'
     },
     devtool: 'inline-source-map',
