@@ -8,7 +8,8 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const { data, error } = useSWR(API_PREFIX + path, {
         fetcher: (path) => fetch(path).then(r => r.json()), revalidateOnFocus: false, revalidateOnReconnect: false
     })
-    return <span data-raw={raw}>{error ? raw.replace(reg, '-') : (data ? raw.replace(reg, data[0].hit) : raw)}</span>
+    const _raw = raw.replace(/<\/?span>/g,'')
+    return <span data-raw={raw}>{error ? _raw.replace(reg, '-') : (data ? _raw.replace(reg, data[0].hit) : _raw)}</span>
 }
 (() => {
     const colle = document.getElementsByClassName('meta-page-view')
