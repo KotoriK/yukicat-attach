@@ -48,7 +48,7 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const handleClick = useCallback(() => { setShowPannel(!showPannel) }, [showPannel, setShowPannel])
     return <>
         <span onClick={handleClick} ref={setRefEle} data-raw={raw} className="clickable-sign">{error ? _rawHit.replace(regNumber, '-') : (data ? _rawHit.replace(regNumber, data[0].hit) : _rawHit)}</span>
-        <DetailPannel ref={setPopper} data={data || { hit: _rawHit }} style={styles.popper} show={showPannel} />
+        <DetailPannel ref={setPopper} data={(data && data[0]) || { hit: _rawHit }} style={styles.popper} show={showPannel} />
     </>
 }
 
