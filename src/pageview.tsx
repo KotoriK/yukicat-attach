@@ -1,5 +1,5 @@
 import useSWR from 'swr'
-import React, { CSSProperties, forwardRef, useCallback, useState } from 'react'
+import React, { CSSProperties, forwardRef,  useEffect, useState } from 'react'
 import { createPortal, hydrate } from 'react-dom'
 import { usePopper } from 'react-popper'
 import 'simple-img-modal/src/FloatButton.css'
@@ -18,7 +18,7 @@ function toTime(time: string | number) {
     const min = _min | 0
     const second = (_min - min) * 60
     const ms = second - (second | 0)
-    return `${min > 0 && `${min}分`}${second > 0 && `${ms > 0 ? second.toFixed(2) : second}秒`}`
+    return `${min > 0 ? `${min}分` : ''}${second > 0 ? `${ms > 0 ? second.toFixed(2) : second}秒` : ''}`
 }
 const DetailPannel = forwardRef<HTMLDivElement, { data: PVDate, style: CSSProperties, show: boolean }>(
     ({ data: { hit, avgTOP }, style, show }, ref) =>
@@ -45,10 +45,21 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const [refEle, setRefEle] = useState<HTMLSpanElement>()
     const [popperEle, setPopper] = useState<HTMLDivElement>()
     const [showPannel, setShowPannel] = useState(false)
+    const [ticker, setTicker] = useState<number>()
     const { styles } = usePopper(refEle, popperEle, { placement: 'top', })
-    const handleClick = useCallback(() => { setShowPannel(!showPannel) }, [showPannel, setShowPannel])
+    useEffect(() => () => {
+        //cleaner
+        clearTimeout(ticker)
+    }, [])
     return <>
-        <span onClick={handleClick} ref={setRefEle} data-raw={raw} className="clickable-sign">{error ? _rawHit.replace(regNumber, '-') : (data ? _rawHit.replace(regNumber, data[0].hit) : _rawHit)}</span>
+        <span onClick={() => {
+            setShowPannel(!showPannel)
+            if (ticker) clearTimeout(ticker)
+            setTicker(window.setTimeout(() => {
+                setShowPannel(showPannel)
+                setTicker(undefined)
+            }, 5000))
+        }} ref={setRefEle} data-raw={raw} className="clickable-sign">{error ? _rawHit.replace(regNumber, '-') : (data ? _rawHit.replace(regNumber, data[0].hit) : _rawHit)}</span>
         {createPortal(<DetailPannel ref={setPopper} data={(data && data[0]) || { hit: _rawHit }} style={styles.popper} show={showPannel} />
             , bodyRef)}
     </>
