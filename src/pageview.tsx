@@ -1,6 +1,6 @@
 import useSWR from 'swr'
 import React, { CSSProperties, forwardRef, useCallback, useState } from 'react'
-import { hydrate } from 'react-dom'
+import { createPortal, hydrate } from 'react-dom'
 import { usePopper } from 'react-popper'
 import 'simple-img-modal/src/FloatButton.css'
 import 'simple-img-modal/src/SignedCollapse.css'
@@ -12,12 +12,13 @@ interface PVDate {
     avgTOP?: string
 
 }
+const { body: bodyRef } = document
 function toTime(time: string | number) {
-    const _time = typeof time == 'string' ? parseFloat(time) : time//second
-    const minute = _time / 60
-    const second = (minute | 0 * 60)
+    const _min = (typeof time == 'string' ? parseFloat(time) : time) / 60//second
+    const min = _min | 0
+    const second = (_min - min) * 60
     const ms = second - (second | 0)
-    return `${minute > 0 && `${minute}分`}${second > 0 && `${ms > 0 ? second.toFixed(2) : second}秒`}`
+    return `${min > 0 && `${min}分`}${second > 0 && `${ms > 0 ? second.toFixed(2) : second}秒`}`
 }
 const DetailPannel = forwardRef<HTMLDivElement, { data: PVDate, style: CSSProperties, show: boolean }>(
     ({ data: { hit, avgTOP }, style, show }, ref) =>
@@ -48,7 +49,8 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const handleClick = useCallback(() => { setShowPannel(!showPannel) }, [showPannel, setShowPannel])
     return <>
         <span onClick={handleClick} ref={setRefEle} data-raw={raw} className="clickable-sign">{error ? _rawHit.replace(regNumber, '-') : (data ? _rawHit.replace(regNumber, data[0].hit) : _rawHit)}</span>
-        <DetailPannel ref={setPopper} data={(data && data[0]) || { hit: _rawHit }} style={styles.popper} show={showPannel} />
+        {createPortal(<DetailPannel ref={setPopper} data={(data && data[0]) || { hit: _rawHit }} style={styles.popper} show={showPannel} />
+            , bodyRef)}
     </>
 }
 
