@@ -46,11 +46,14 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const [popperEle, setPopper] = useState<HTMLDivElement>()
     const [showPannel, setShowPannel] = useState(false)
     const [ticker, setTicker] = useState<number>()
-    const { styles } = usePopper(refEle, popperEle, { placement: 'top', })
-    useEffect(() => () => {
-        //cleaner
-        clearTimeout(ticker)
-    }, [])
+    const { styles } = usePopper(refEle, popperEle, { placement: 'top',modifiers:[{name:'eventListeners',options:{resize:showPannel,scroll:showPannel}}]})
+    /* const setShowPannel = useCallback((value:boolean)=>{
+        if(value){
+            state.
+        }
+        _setShowPannel(value)
+    },[_setShowPannel]) */
+    useEffect(() => () => clearTimeout(ticker), [])        //cleaner
     return <>
         <span onClick={() => {
             setShowPannel(!showPannel)
@@ -72,6 +75,6 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
             { attributes: attr } = e,
             path = attr.getNamedItem('data-path')?.value,
             raw = e.innerHTML
-        hydrate(<PageView path={path} raw={raw}></PageView>, e)
+        hydrate(<PageView path={path} raw={raw} />, e)
     }
 })()
