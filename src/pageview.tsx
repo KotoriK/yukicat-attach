@@ -77,4 +77,5 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
             raw = e.innerHTML
         hydrate(<PageView path={path} raw={raw} />, e)
     }
+    console.log('loaded')
 })()
