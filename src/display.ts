@@ -1,11 +1,16 @@
 
 import { _attachListeners, showModal, setImageModal, setContainer } from "simple-img-modal/src/deploy"
-import { ImageModalWithEXIF } from 'simple-img-modal/src/ImageModalWithEXIF'
 
-export default  () => {
-    const node = document.body.appendChild(document.createElement('div'))
-    setImageModal(ImageModalWithEXIF)
-    setContainer(node)
-    _attachListeners(document.querySelectorAll('div.entry-content img:not(.avatar)'))
-    showModal()
+export default () => {
+    const imgs:NodeListOf<HTMLElement> = document.querySelectorAll('div.entry-content img:not(.avatar)')
+    if (imgs.length > 0) {
+        const node = document.body.appendChild(document.createElement('div'))
+        _attachListeners(imgs)
+        import('simple-img-modal/src/ImageModalWithEXIF').then(({ ImageModalWithEXIF }) => {
+            setImageModal(ImageModalWithEXIF)
+            setContainer(node)
+            showModal()
+        })
+
+    }
 }

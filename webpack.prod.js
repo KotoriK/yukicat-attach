@@ -11,13 +11,13 @@ module.exports = merge(common, {
         minimizer: [new OptimizeCSSAssetsPlugin({}),
             new TerserPlugin(
             {test:/\.js$/,terserOptions: {
-                ecma: 2015,}},)
+                ecma: 2020,}},)
         ],
-        /* splitChunks: {
+        splitChunks: {
             chunks: "all",
             minSize: 3000,
             minChunks: 1,
-            cacheGroups: {
+           /*  cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
                     // cacheGroupKey here is `commons` as the key of the cacheGroup
@@ -32,8 +32,8 @@ module.exports = merge(common, {
                     enforce: true,
                 },
             }, 
-        },
-    }, */
+        }, */
+    },
     },
     module: {
         rules: [
