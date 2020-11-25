@@ -1,4 +1,3 @@
-
 import { _attachListeners, showModal, setImageModal, setContainer } from "simple-img-modal/src/deploy"
 
 export default () => {
