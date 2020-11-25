@@ -19,6 +19,6 @@ import FaceSelectorDeployer from 'face-pack/src/FaceSelector/FaceSelectorDeploye
                     },
                 },
             ],
-        }
+        },style:{zIndex:999}
     }).render().hide()
 })()
