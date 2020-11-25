@@ -4,12 +4,15 @@ import FaceSelectorDeployer from 'face-pack/src/FaceSelector/FaceSelectorDeploye
 (async () => {
     const tooltip = document.documentElement.appendChild(document.createElement('div'))
     tooltip.style.zIndex = '999'
-    const commentArea = (() => {
+    const handleSelect = (() => {
         let cache
         return () => {
-            if (cache) return cache;
+            if (cache) { return cache }
             else {
-                const result = (document.getElementById('comment') as HTMLTextAreaElement) ?? document.querySelector('div.ql-editor > p:nth-last-child(1)')
+                const wpdiscuz = document.querySelector('div.ql-editor > p:nth-last-child(1)')
+                let legacy_blocksy
+                const result = wpdiscuz ? (pack, face) => wpdiscuz.innerHTML += `:${pack.id}.${face.id}:` : (legacy_blocksy = (document.getElementById('comment') as HTMLTextAreaElement), (pack, face) =>
+                    legacy_blocksy.value += `:${pack.id}.${face.id}:`)
                 cache = result
                 return result
             }
@@ -19,10 +22,7 @@ import FaceSelectorDeployer from 'face-pack/src/FaceSelector/FaceSelectorDeploye
         popcorn: document.getElementById('show-fs'),
         tooltip,
         facePackages: await importExternalFacePacks('https://cdn.jsdelivr.net/gh/YukiCat-Dev/yukicat.facepack/facepacks.json'),
-        onFaceSelected:
-            (pack, face) =>
-                commentArea().value += `:${pack.id}.${face.id}:`
-        ,
+        onFaceSelected: handleSelect(),
         popperOptions: { placement: 'top' }, peakPopperOptions: {
             placement: "right", modifiers: [
                 {
