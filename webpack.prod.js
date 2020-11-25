@@ -9,9 +9,9 @@ module.exports = merge(common, {
     mode: 'production',
     optimization: {
         minimizer: [new OptimizeCSSAssetsPlugin({}),
-            new TerserPlugin(
+            /* new TerserPlugin(
             {test:/\.js$/,terserOptions: {
-                ecma: 2020,}},)
+                ecma: 2020,}},) */
         ],
         splitChunks: {
             chunks: "all",

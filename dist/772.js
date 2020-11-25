@@ -1,2 +1,1491 @@
-(self.webpackChunkyukicat_attach=self.webpackChunkyukicat_attach||[]).push([[772],{9188:(e,t,r)=>{"use strict";r.d(t,{kZ:()=>v});var n=r(7272),i=r(583),o=r(3624),a=r(3779),u=r(380),c=r(8293),s=r(3),f=r(2556),l={placement:"bottom",modifiers:[],strategy:"absolute"};function d(){for(var e=arguments.length,t=new Array(e),r=0;r<e;r++)t[r]=arguments[r];return!t.some((function(e){return!(e&&"function"==typeof e.getBoundingClientRect)}))}function v(e){void 0===e&&(e={});var t=e,r=t.defaultModifiers,v=void 0===r?[]:r,p=t.defaultOptions,h=void 0===p?l:p;return function(e,t,r){void 0===r&&(r=h);var p={placement:"bottom",orderedModifiers:[],options:Object.assign(Object.assign({},l),h),modifiersData:{},elements:{reference:e,popper:t},attributes:{},styles:{}},y=[],g=!1,b={state:p,setOptions:function(r){m(),p.options=Object.assign(Object.assign(Object.assign({},h),p.options),r),p.scrollParents={reference:(0,f.kK)(e)?(0,o.Z)(e):e.contextElement?(0,o.Z)(e.contextElement):[],popper:(0,o.Z)(t)};var n=(0,u.Z)((0,s.Z)([].concat(v,p.options.modifiers)));return p.orderedModifiers=n.filter((function(e){return e.enabled})),p.orderedModifiers.forEach((function(e){var t=e.name,r=e.options,n=void 0===r?{}:r,i=e.effect;if("function"==typeof i){var o=i({state:p,name:t,instance:b,options:n}),a=function(){};y.push(o||a)}})),b.update()},forceUpdate:function(){if(!g){var e=p.elements,t=e.reference,r=e.popper;if(d(t,r)){p.rects={reference:(0,n.Z)(t,(0,a.Z)(r),"fixed"===p.options.strategy),popper:(0,i.Z)(r)},p.reset=!1,p.placement=p.options.placement,p.orderedModifiers.forEach((function(e){return p.modifiersData[e.name]=Object.assign({},e.data)}));for(var o=0;o<p.orderedModifiers.length;o++)if(!0!==p.reset){var u=p.orderedModifiers[o],c=u.fn,s=u.options,f=void 0===s?{}:s,l=u.name;"function"==typeof c&&(p=c({state:p,options:f,name:l,instance:b})||p)}else p.reset=!1,o=-1}}},update:(0,c.Z)((function(){return new Promise((function(e){b.forceUpdate(),e(p)}))})),destroy:function(){m(),g=!0}};if(!d(e,t))return b;function m(){y.forEach((function(e){return e()})),y=[]}return b.setOptions(r).then((function(e){!g&&r.onFirstUpdate&&r.onFirstUpdate(e)})),b}}},7701:(e,t,r)=>{"use strict";r.d(t,{we:()=>n,I:()=>i,F2:()=>o,t$:()=>a,d7:()=>u,mv:()=>c,BL:()=>s,ut:()=>f,zV:()=>l,Pj:()=>d,k5:()=>v,YP:()=>p,bw:()=>h,Ct:()=>y,xs:()=>g});var n="top",i="bottom",o="right",a="left",u="auto",c=[n,i,o,a],s="start",f="end",l="clippingParents",d="viewport",v="popper",p="reference",h=c.reduce((function(e,t){return e.concat([t+"-"+s,t+"-"+f])}),[]),y=[].concat(c,[u]).reduce((function(e,t){return e.concat([t,t+"-"+s,t+"-"+f])}),[]),g=["beforeRead","read","afterRead","beforeMain","main","afterMain","beforeWrite","write","afterWrite"]},8100:(e,t,r)=>{"use strict";r.r(t),r.d(t,{SWRConfig:()=>z,cache:()=>c,default:()=>K,mutate:()=>V,trigger:()=>E,useSWRInfinite:()=>W});var n=r(3804),i=Object.prototype.hasOwnProperty;var o=new WeakMap,a=0;const u={isOnline:function(){return void 0===navigator.onLine||navigator.onLine},isDocumentVisible:function(){return"undefined"==typeof document||void 0===document.visibilityState||"hidden"!==document.visibilityState},fetcher:function(e){return fetch(e).then((function(e){return e.json()}))}};var c=new(function(){function e(e){void 0===e&&(e={}),this.__cache=new Map(Object.entries(e)),this.__listeners=[]}return e.prototype.get=function(e){var t=this.serializeKey(e)[0];return this.__cache.get(t)},e.prototype.set=function(e,t){var r=this.serializeKey(e)[0];this.__cache.set(r,t),this.notify()},e.prototype.keys=function(){return Array.from(this.__cache.keys())},e.prototype.has=function(e){var t=this.serializeKey(e)[0];return this.__cache.has(t)},e.prototype.clear=function(){this.__cache.clear(),this.notify()},e.prototype.delete=function(e){var t=this.serializeKey(e)[0];this.__cache.delete(t),this.notify()},e.prototype.serializeKey=function(e){var t=null;if("function"==typeof e)try{e=e()}catch(t){e=""}return Array.isArray(e)?(t=e,e=function(e){if(!e.length)return"";for(var t="arg",r=0;r<e.length;++r){var n=void 0;null===e[r]||"object"!=typeof e[r]&&"function"!=typeof e[r]?n="string"==typeof e[r]?'"'+e[r]+'"':String(e[r]):o.has(e[r])?n=o.get(e[r]):(n=a,o.set(e[r],a++)),t+="@"+n}return t}(e)):e=String(e||""),[e,t,e?"err@"+e:"",e?"validating@"+e:""]},e.prototype.subscribe=function(e){var t=this;if("function"!=typeof e)throw new Error("Expected the listener to be a function.");var r=!0;return this.__listeners.push(e),function(){if(r){r=!1;var n=t.__listeners.indexOf(e);n>-1&&(t.__listeners[n]=t.__listeners[t.__listeners.length-1],t.__listeners.length--)}}},e.prototype.notify=function(){for(var e=0,t=this.__listeners;e<t.length;e++){(0,t[e])()}},e}());var s="undefined"!=typeof window&&navigator.connection&&-1!==["slow-2g","2g"].indexOf(navigator.connection.effectiveType);const f={onLoadingSlow:function(){},onSuccess:function(){},onError:function(){},onErrorRetry:function(e,t,r,n,i){if(r.isDocumentVisible()&&!("number"==typeof r.errorRetryCount&&i.retryCount>r.errorRetryCount)){var o=Math.min(i.retryCount||0,8),a=~~((Math.random()+.5)*(1<<o))*r.errorRetryInterval;setTimeout(n,a,i)}},errorRetryInterval:1e3*(s?10:5),focusThrottleInterval:5e3,dedupingInterval:2e3,loadingTimeout:1e3*(s?5:3),refreshInterval:0,revalidateOnFocus:!0,revalidateOnReconnect:!0,refreshWhenHidden:!1,refreshWhenOffline:!1,shouldRetryOnError:!0,suspense:!1,compare:function e(t,r){var n,o;if(t===r)return!0;if(t&&r&&(n=t.constructor)===r.constructor){if(n===Date)return t.getTime()===r.getTime();if(n===RegExp)return t.toString()===r.toString();if(n===Array){if((o=t.length)===r.length)for(;o--&&e(t[o],r[o]););return-1===o}if(!n||"object"==typeof t){for(n in o=0,t){if(i.call(t,n)&&++o&&!i.call(r,n))return!1;if(!(n in r)||!e(t[n],r[n]))return!1}return Object.keys(r).length===o}}return t!=t&&r!=r},fetcher:u.fetcher,isOnline:u.isOnline,isDocumentVisible:u.isDocumentVisible};var l=(0,n.createContext)({});l.displayName="SWRConfigContext";const d=l;var v,p=function(e,t,r,n){return new(r||(r=Promise))((function(i,o){function a(e){try{c(n.next(e))}catch(e){o(e)}}function u(e){try{c(n.throw(e))}catch(e){o(e)}}function c(e){var t;e.done?i(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(a,u)}c((n=n.apply(e,t||[])).next())}))},h=function(e,t){var r,n,i,o,a={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function u(o){return function(u){return function(o){if(r)throw new TypeError("Generator is already executing.");for(;a;)try{if(r=1,n&&(i=2&o[0]?n.return:o[0]?n.throw||((i=n.return)&&i.call(n),0):n.next)&&!(i=i.call(n,o[1])).done)return i;switch(n=0,i&&(o=[2&o[0],i.value]),o[0]){case 0:case 1:i=o;break;case 4:return a.label++,{value:o[1],done:!1};case 5:a.label++,n=o[1],o=[0];continue;case 7:o=a.ops.pop(),a.trys.pop();continue;default:if(!(i=a.trys,(i=i.length>0&&i[i.length-1])||6!==o[0]&&2!==o[0])){a=0;continue}if(3===o[0]&&(!i||o[1]>i[0]&&o[1]<i[3])){a.label=o[1];break}if(6===o[0]&&a.label<i[1]){a.label=i[1],i=o;break}if(i&&a.label<i[2]){a.label=i[2],a.ops.push(o);break}i[2]&&a.ops.pop(),a.trys.pop();continue}o=t.call(e,a)}catch(e){o=[6,e],n=0}finally{r=i=0}if(5&o[0])throw o[1];return{value:o[0]?o[1]:void 0,done:!0}}([o,u])}}},y="undefined"==typeof window||!!("undefined"!=typeof Deno&&Deno&&Deno.version&&Deno.version.deno),g=y?null:window.requestAnimationFrame||function(e){return setTimeout(e,1)},b=y?n.useEffect:n.useLayoutEffect,m={},w={},O={},_={},R={},j={},k={},x=(v=0,function(){return v++});if(!y&&window.addEventListener){var S=function(e){if(f.isDocumentVisible()&&f.isOnline())for(var t in e)e[t][0]&&e[t][0]()};window.addEventListener("visibilitychange",(function(){return S(O)}),!1),window.addEventListener("focus",(function(){return S(O)}),!1),window.addEventListener("online",(function(){return S(_)}),!1)}var E=function(e,t){void 0===t&&(t=!0);var r=c.serializeKey(e),n=r[0],i=r[2],o=r[3];if(!n)return Promise.resolve();var a=R[n];if(n&&a){for(var u=c.get(n),s=c.get(i),f=c.get(o),l=[],d=0;d<a.length;++d)l.push(a[d](t,u,s,f,d>0));return Promise.all(l).then((function(){return c.get(n)}))}return Promise.resolve(c.get(n))},C=function(e,t,r,n){var i=R[e];if(e&&i)for(var o=0;o<i.length;++o)i[o](!1,t,r,n)},V=function(e,t,r){return void 0===r&&(r=!0),p(void 0,void 0,void 0,(function(){var n,i,o,a,u,s,f,l,d,v,p,y,g;return h(this,(function(h){switch(h.label){case 0:if(n=c.serializeKey(e),i=n[0],o=n[2],!i)return[2];if(void 0===t)return[2,E(e,r)];if(j[i]=x()-1,k[i]=0,a=j[i],u=w[i],l=!1,t&&"function"==typeof t)try{t=t(c.get(i))}catch(e){f=e}if(!t||"function"!=typeof t.then)return[3,5];l=!0,h.label=1;case 1:return h.trys.push([1,3,,4]),[4,t];case 2:return s=h.sent(),[3,4];case 3:return d=h.sent(),f=d,[3,4];case 4:return[3,6];case 5:s=t,h.label=6;case 6:return(v=function(){if(a!==j[i]||u!==w[i]){if(f)throw f;return!0}})()?[2,s]:(void 0!==s&&c.set(i,s),c.set(o,f),k[i]=x()-1,l?[3,8]:[4,0]);case 7:if(h.sent(),v())return[2,s];h.label=8;case 8:if(p=R[i]){for(y=[],g=0;g<p.length;++g)y.push(p[g](!!r,s,f,void 0,g>0));return[2,Promise.all(y).then((function(){if(f)throw f;return c.get(i)}))]}if(f)throw f;return[2,s]}}))}))};var z=d.Provider;const D=function(){for(var e=this,t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var i,o,a={};t.length>=1&&(i=t[0]),t.length>2?(o=t[1],a=t[2]):"function"==typeof t[1]?o=t[1]:"object"==typeof t[1]&&(a=t[1]);var u=c.serializeKey(i),s=u[0],l=u[1],v=u[2],y=u[3];a=Object.assign({},f,(0,n.useContext)(d),a);var S=(0,n.useRef)(a);b((function(){S.current=a})),void 0===o&&(o=a.fetcher);var E=function(){var e=c.get(s);return void 0===e?a.initialData:e},z=E(),D=c.get(v),P=!!c.get(y),T=(0,n.useRef)({data:!1,error:!1,isValidating:!1}),M=(0,n.useRef)({data:z,error:D,isValidating:P});(0,n.useDebugValue)(M.current.data);var I=(0,n.useState)(null)[1],W=(0,n.useCallback)((function(e){var t=!1;for(var r in e)M.current[r]!==e[r]&&(M.current[r]=e[r],T.current[r]&&(t=!0));if(t||a.suspense){if(K.current||!Z.current)return;I({})}}),[]),K=(0,n.useRef)(!1),L=(0,n.useRef)(s),Z=(0,n.useRef)(!1),A=(0,n.useRef)({emit:function(e){for(var t,r=[],n=1;n<arguments.length;n++)r[n-1]=arguments[n];K.current||(t=S.current)[e].apply(t,r)}}),F=(0,n.useCallback)((function(e,t){return V(L.current,e,t)}),[]),U=function(e,t){t&&(e[s]?e[s].push(t):e[s]=[t])},H=function(e,t){if(e[s]){var r=e[s],n=r.indexOf(t);n>=0&&(r[n]=r[r.length-1],r.pop())}},B=(0,n.useCallback)((function(t){return void 0===t&&(t={}),p(e,void 0,void 0,(function(){var e,r,n,i,u,f,d;return h(this,(function(p){switch(p.label){case 0:if(!s||!o)return[2,!1];if(K.current)return[2,!1];t=Object.assign({dedupe:!1},t),e=!0,r=void 0!==m[s]&&t.dedupe,p.label=1;case 1:return p.trys.push([1,6,,7]),W({isValidating:!0}),c.set(y,!0),r||C(s,M.current.data,M.current.error,!0),n=void 0,i=void 0,r?(i=w[s],[4,m[s]]):[3,3];case 2:return n=p.sent(),[3,5];case 3:return a.loadingTimeout&&!c.get(s)&&setTimeout((function(){e&&A.current.emit("onLoadingSlow",s,a)}),a.loadingTimeout),m[s]=null!==l?o.apply(void 0,l):o(s),w[s]=i=x(),[4,m[s]];case 4:n=p.sent(),setTimeout((function(){delete m[s],delete w[s]}),a.dedupingInterval),A.current.emit("onSuccess",n,s,a),p.label=5;case 5:return w[s]>i||j[s]&&(i<=j[s]||i<=k[s]||0===k[s])?(W({isValidating:!1}),[2,!1]):(c.set(s,n),c.set(v,void 0),c.set(y,!1),u={isValidating:!1},void 0!==M.current.error&&(u.error=void 0),a.compare(M.current.data,n)||(u.data=n),W(u),r||C(s,n,u.error,!1),[3,7]);case 6:return f=p.sent(),delete m[s],delete w[s],c.set(v,f),M.current.error!==f&&(W({isValidating:!1,error:f}),r||C(s,void 0,f,!1)),A.current.emit("onError",f,s,a),a.shouldRetryOnError&&(d=(t.retryCount||0)+1,A.current.emit("onErrorRetry",f,s,a,B,Object.assign({dedupe:!0},t,{retryCount:d}))),[3,7];case 7:return e=!1,[2,!0]}}))}))}),[s]);b((function(){if(s){K.current=!1,Z.current=!0;var e=M.current.data,t=E();L.current!==s&&(L.current=s),a.compare(e,t)||W({data:t});var r=function(){return B({dedupe:!0})};(a.revalidateOnMount||!a.initialData&&void 0===a.revalidateOnMount)&&(void 0!==t?g(r):r());var n=!1,i=function(){!n&&S.current.revalidateOnFocus&&(n=!0,r(),setTimeout((function(){return n=!1}),S.current.focusThrottleInterval))},o=function(){S.current.revalidateOnReconnect&&r()},u=function(e,t,n,i,o){void 0===e&&(e=!0),void 0===o&&(o=!0);var u={},c=!1;return void 0===t||a.compare(M.current.data,t)||(u.data=t,c=!0),M.current.error!==n&&(u.error=n,c=!0),void 0!==i&&M.current.isValidating!==i&&(u.isValidating=i,c=!0),c&&W(u),!!e&&(o?r():B())};return U(O,i),U(_,o),U(R,u),function(){W=function(){return null},K.current=!0,H(O,i),H(_,o),H(R,u)}}}),[s,B]),b((function(){var t=null,r=function(){return p(e,void 0,void 0,(function(){return h(this,(function(e){switch(e.label){case 0:return M.current.error||!S.current.refreshWhenHidden&&!S.current.isDocumentVisible()||!S.current.refreshWhenOffline&&!S.current.isOnline()?[3,2]:[4,B({dedupe:!0})];case 1:e.sent(),e.label=2;case 2:return S.current.refreshInterval&&!M.current.error&&(t=setTimeout(r,S.current.refreshInterval)),[2]}}))}))};return S.current.refreshInterval&&(t=setTimeout(r,S.current.refreshInterval)),function(){t&&clearTimeout(t)}}),[a.refreshInterval,a.refreshWhenHidden,a.refreshWhenOffline,B]);var G=(0,n.useMemo)((function(){var e={revalidate:B,mutate:F};return Object.defineProperties(e,{error:{get:function(){return T.current.error=!0,L.current===s?M.current.error:D},enumerable:!0},data:{get:function(){return T.current.data=!0,L.current===s?M.current.data:z},enumerable:!0},isValidating:{get:function(){return T.current.isValidating=!0,M.current.isValidating},enumerable:!0}}),e}),[B]);if(a.suspense){var q=c.get(s),N=c.get(v);if(void 0===q&&(q=z),void 0===N&&(N=D),void 0===q&&void 0===N){if(m[s]||B(),m[s]&&"function"==typeof m[s].then)throw m[s];q=m[s]}if(void 0===q&&N)throw N;return{error:N,data:q,revalidate:B,mutate:F,isValidating:M.current.isValidating}}return G};var P=function(){return(P=Object.assign||function(e){for(var t,r=1,n=arguments.length;r<n;r++)for(var i in t=arguments[r])Object.prototype.hasOwnProperty.call(t,i)&&(e[i]=t[i]);return e}).apply(this,arguments)},T=function(e,t,r,n){return new(r||(r=Promise))((function(i,o){function a(e){try{c(n.next(e))}catch(e){o(e)}}function u(e){try{c(n.throw(e))}catch(e){o(e)}}function c(e){var t;e.done?i(e.value):(t=e.value,t instanceof r?t:new r((function(e){e(t)}))).then(a,u)}c((n=n.apply(e,t||[])).next())}))},M=function(e,t){var r,n,i,o,a={label:0,sent:function(){if(1&i[0])throw i[1];return i[1]},trys:[],ops:[]};return o={next:u(0),throw:u(1),return:u(2)},"function"==typeof Symbol&&(o[Symbol.iterator]=function(){return this}),o;function u(o){return function(u){return function(o){if(r)throw new TypeError("Generator is already executing.");for(;a;)try{if(r=1,n&&(i=2&o[0]?n.return:o[0]?n.throw||((i=n.return)&&i.call(n),0):n.next)&&!(i=i.call(n,o[1])).done)return i;switch(n=0,i&&(o=[2&o[0],i.value]),o[0]){case 0:case 1:i=o;break;case 4:return a.label++,{value:o[1],done:!1};case 5:a.label++,n=o[1],o=[0];continue;case 7:o=a.ops.pop(),a.trys.pop();continue;default:if(!(i=a.trys,(i=i.length>0&&i[i.length-1])||6!==o[0]&&2!==o[0])){a=0;continue}if(3===o[0]&&(!i||o[1]>i[0]&&o[1]<i[3])){a.label=o[1];break}if(6===o[0]&&a.label<i[1]){a.label=i[1],i=o;break}if(i&&a.label<i[2]){a.label=i[2],a.ops.push(o);break}i[2]&&a.ops.pop(),a.trys.pop();continue}o=t.call(e,a)}catch(e){o=[6,e],n=0}finally{r=i=0}if(5&o[0])throw o[1];return{value:o[0]?o[1]:void 0,done:!0}}([o,u])}}},I=function(e,t){var r={};for(var n in e)Object.prototype.hasOwnProperty.call(e,n)&&t.indexOf(n)<0&&(r[n]=e[n]);if(null!=e&&"function"==typeof Object.getOwnPropertySymbols){var i=0;for(n=Object.getOwnPropertySymbols(e);i<n.length;i++)t.indexOf(n[i])<0&&Object.prototype.propertyIsEnumerable.call(e,n[i])&&(r[n[i]]=e[n[i]])}return r};function W(){for(var e=this,t=[],r=0;r<arguments.length;r++)t[r]=arguments[r];var i,o,a={};t.length>=1&&(i=t[0]),t.length>2?(o=t[1],a=t[2]):"function"==typeof t[1]?o=t[1]:"object"==typeof t[1]&&(a=t[1]);var u=(a=Object.assign({},f,(0,n.useContext)(d),a)).initialSize,s=void 0===u?1:u,l=a.revalidateAll,v=void 0!==l&&l,p=a.persistSize,h=void 0!==p&&p,y=a.fetcher,g=I(a,["initialSize","revalidateAll","persistSize","fetcher"]);void 0===o&&(o=y);var b=null;try{b=c.serializeKey(i(0,null))[0]}catch(e){}var m=(0,n.useState)(!1)[1],w=null;b&&(w="context@"+b);var O,_=null;b&&(_="size@"+b,O=c.get(_));var R=(0,n.useRef)(O||s),j=(0,n.useRef)(!1);(0,n.useEffect)((function(){j.current?h||(R.current=s):j.current=!0}),[b]);var k=D(b?["many",b]:null,(function(){return T(e,void 0,void 0,(function(){var e,t,r,n,u,s,f,l,d,p;return M(this,(function(h){switch(h.label){case 0:e=c.get(w)||{},t=e.originalData,r=e.force,n=[],u=null,s=0,h.label=1;case 1:return s<R.current?(f=c.serializeKey(i(s,u)),l=f[0],d=f[1],l?(p=c.get(l),v||r||void 0===r&&0===s||t&&!a.compare(t[s],p)||void 0===p?null===d?[3,3]:[4,o.apply(void 0,d)]:[3,6]):[3,8]):[3,8];case 2:return p=h.sent(),[3,5];case 3:return[4,o(l)];case 4:p=h.sent(),h.label=5;case 5:c.set(l,p),h.label=6;case 6:n.push(p),u=p,h.label=7;case 7:return++s,[3,1];case 8:return c.delete(w),[2,n]}}))}))}),g),x=(0,n.useRef)(k.data);(0,n.useEffect)((function(){x.current=k.data}),[k.data]);var S=(0,n.useCallback)((function(e,t){if(void 0===t&&(t=!0),t&&void 0!==e){var r=x.current;c.set(w,{originalData:r,force:!1})}else t&&c.set(w,{force:!0});return k.mutate(e,t)}),[k.mutate,w]),E=R.current,C=(0,n.useCallback)((function(e){return"function"==typeof e?R.current=e(R.current):"number"==typeof e&&(R.current=e),c.set(_,R.current),m((function(e){return!e})),S((function(e){return e}))}),[S,_]);return P(P({},k),{mutate:S,size:E,setSize:C})}const K=D}}]);
+(self["webpackChunkyukicat_attach"] = self["webpackChunkyukicat_attach"] || []).push([[772],{
+
+/***/ 9188:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "kZ": () => /* binding */ popperGenerator
+/* harmony export */ });
+/* unused harmony export createPopper */
+/* harmony import */ var _dom_utils_getCompositeRect_js__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(7272);
+/* harmony import */ var _dom_utils_getLayoutRect_js__WEBPACK_IMPORTED_MODULE_6__ = __webpack_require__(583);
+/* harmony import */ var _dom_utils_listScrollParents_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(3624);
+/* harmony import */ var _dom_utils_getOffsetParent_js__WEBPACK_IMPORTED_MODULE_5__ = __webpack_require__(3779);
+/* harmony import */ var _utils_orderModifiers_js__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(380);
+/* harmony import */ var _utils_debounce_js__WEBPACK_IMPORTED_MODULE_7__ = __webpack_require__(8293);
+/* harmony import */ var _utils_mergeByName_js__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(3);
+/* harmony import */ var _dom_utils_instanceOf_js__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(2556);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+var INVALID_ELEMENT_ERROR = 'Popper: Invalid reference or popper argument provided. They must be either a DOM element or virtual element.';
+var INFINITE_LOOP_ERROR = 'Popper: An infinite loop in the modifiers cycle has been detected! The cycle has been interrupted to prevent a browser crash.';
+var DEFAULT_OPTIONS = {
+  placement: 'bottom',
+  modifiers: [],
+  strategy: 'absolute'
+};
+
+function areValidElements() {
+  for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+    args[_key] = arguments[_key];
+  }
+
+  return !args.some(function (element) {
+    return !(element && typeof element.getBoundingClientRect === 'function');
+  });
+}
+
+function popperGenerator(generatorOptions) {
+  if (generatorOptions === void 0) {
+    generatorOptions = {};
+  }
+
+  var _generatorOptions = generatorOptions,
+      _generatorOptions$def = _generatorOptions.defaultModifiers,
+      defaultModifiers = _generatorOptions$def === void 0 ? [] : _generatorOptions$def,
+      _generatorOptions$def2 = _generatorOptions.defaultOptions,
+      defaultOptions = _generatorOptions$def2 === void 0 ? DEFAULT_OPTIONS : _generatorOptions$def2;
+  return function createPopper(reference, popper, options) {
+    if (options === void 0) {
+      options = defaultOptions;
+    }
+
+    var state = {
+      placement: 'bottom',
+      orderedModifiers: [],
+      options: Object.assign(Object.assign({}, DEFAULT_OPTIONS), defaultOptions),
+      modifiersData: {},
+      elements: {
+        reference: reference,
+        popper: popper
+      },
+      attributes: {},
+      styles: {}
+    };
+    var effectCleanupFns = [];
+    var isDestroyed = false;
+    var instance = {
+      state: state,
+      setOptions: function setOptions(options) {
+        cleanupModifierEffects();
+        state.options = Object.assign(Object.assign(Object.assign({}, defaultOptions), state.options), options);
+        state.scrollParents = {
+          reference: (0,_dom_utils_instanceOf_js__WEBPACK_IMPORTED_MODULE_0__/* .isElement */ .kK)(reference) ? (0,_dom_utils_listScrollParents_js__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(reference) : reference.contextElement ? (0,_dom_utils_listScrollParents_js__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(reference.contextElement) : [],
+          popper: (0,_dom_utils_listScrollParents_js__WEBPACK_IMPORTED_MODULE_1__/* .default */ .Z)(popper)
+        }; // Orders the modifiers based on their dependencies and `phase`
+        // properties
+
+        var orderedModifiers = (0,_utils_orderModifiers_js__WEBPACK_IMPORTED_MODULE_2__/* .default */ .Z)((0,_utils_mergeByName_js__WEBPACK_IMPORTED_MODULE_3__/* .default */ .Z)([].concat(defaultModifiers, state.options.modifiers))); // Strip out disabled modifiers
+
+        state.orderedModifiers = orderedModifiers.filter(function (m) {
+          return m.enabled;
+        }); // Validate the provided modifiers so that the consumer will get warned
+        // if one of the modifiers is invalid for any reason
+
+        if (false) { var _getComputedStyle, marginTop, marginRight, marginBottom, marginLeft, flipModifier, modifiers; }
+
+        runModifierEffects();
+        return instance.update();
+      },
+      // Sync update – it will always be executed, even if not necessary. This
+      // is useful for low frequency updates where sync behavior simplifies the
+      // logic.
+      // For high frequency updates (e.g. `resize` and `scroll` events), always
+      // prefer the async Popper#update method
+      forceUpdate: function forceUpdate() {
+        if (isDestroyed) {
+          return;
+        }
+
+        var _state$elements = state.elements,
+            reference = _state$elements.reference,
+            popper = _state$elements.popper; // Don't proceed if `reference` or `popper` are not valid elements
+        // anymore
+
+        if (!areValidElements(reference, popper)) {
+          if (false) {}
+
+          return;
+        } // Store the reference and popper rects to be read by modifiers
+
+
+        state.rects = {
+          reference: (0,_dom_utils_getCompositeRect_js__WEBPACK_IMPORTED_MODULE_4__/* .default */ .Z)(reference, (0,_dom_utils_getOffsetParent_js__WEBPACK_IMPORTED_MODULE_5__/* .default */ .Z)(popper), state.options.strategy === 'fixed'),
+          popper: (0,_dom_utils_getLayoutRect_js__WEBPACK_IMPORTED_MODULE_6__/* .default */ .Z)(popper)
+        }; // Modifiers have the ability to reset the current update cycle. The
+        // most common use case for this is the `flip` modifier changing the
+        // placement, which then needs to re-run all the modifiers, because the
+        // logic was previously ran for the previous placement and is therefore
+        // stale/incorrect
+
+        state.reset = false;
+        state.placement = state.options.placement; // On each update cycle, the `modifiersData` property for each modifier
+        // is filled with the initial data specified by the modifier. This means
+        // it doesn't persist and is fresh on each update.
+        // To ensure persistent data, use `${name}#persistent`
+
+        state.orderedModifiers.forEach(function (modifier) {
+          return state.modifiersData[modifier.name] = Object.assign({}, modifier.data);
+        });
+        var __debug_loops__ = 0;
+
+        for (var index = 0; index < state.orderedModifiers.length; index++) {
+          if (false) {}
+
+          if (state.reset === true) {
+            state.reset = false;
+            index = -1;
+            continue;
+          }
+
+          var _state$orderedModifie = state.orderedModifiers[index],
+              fn = _state$orderedModifie.fn,
+              _state$orderedModifie2 = _state$orderedModifie.options,
+              _options = _state$orderedModifie2 === void 0 ? {} : _state$orderedModifie2,
+              name = _state$orderedModifie.name;
+
+          if (typeof fn === 'function') {
+            state = fn({
+              state: state,
+              options: _options,
+              name: name,
+              instance: instance
+            }) || state;
+          }
+        }
+      },
+      // Async and optimistically optimized update – it will not be executed if
+      // not necessary (debounced to run at most once-per-tick)
+      update: (0,_utils_debounce_js__WEBPACK_IMPORTED_MODULE_7__/* .default */ .Z)(function () {
+        return new Promise(function (resolve) {
+          instance.forceUpdate();
+          resolve(state);
+        });
+      }),
+      destroy: function destroy() {
+        cleanupModifierEffects();
+        isDestroyed = true;
+      }
+    };
+
+    if (!areValidElements(reference, popper)) {
+      if (false) {}
+
+      return instance;
+    }
+
+    instance.setOptions(options).then(function (state) {
+      if (!isDestroyed && options.onFirstUpdate) {
+        options.onFirstUpdate(state);
+      }
+    }); // Modifiers have the ability to execute arbitrary code before the first
+    // update cycle runs. They will be executed in the same order as the update
+    // cycle. This is useful when a modifier adds some persistent data that
+    // other modifiers need to use, but the modifier is run after the dependent
+    // one.
+
+    function runModifierEffects() {
+      state.orderedModifiers.forEach(function (_ref3) {
+        var name = _ref3.name,
+            _ref3$options = _ref3.options,
+            options = _ref3$options === void 0 ? {} : _ref3$options,
+            effect = _ref3.effect;
+
+        if (typeof effect === 'function') {
+          var cleanupFn = effect({
+            state: state,
+            name: name,
+            instance: instance,
+            options: options
+          });
+
+          var noopFn = function noopFn() {};
+
+          effectCleanupFns.push(cleanupFn || noopFn);
+        }
+      });
+    }
+
+    function cleanupModifierEffects() {
+      effectCleanupFns.forEach(function (fn) {
+        return fn();
+      });
+      effectCleanupFns = [];
+    }
+
+    return instance;
+  };
+}
+var createPopper = /*#__PURE__*/(/* unused pure expression or super */ null && (popperGenerator())); // eslint-disable-next-line import/no-unused-modules
+
+
+
+/***/ }),
+
+/***/ 7701:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+/* harmony export */ __webpack_require__.d(__webpack_exports__, {
+/* harmony export */   "we": () => /* binding */ top,
+/* harmony export */   "I": () => /* binding */ bottom,
+/* harmony export */   "F2": () => /* binding */ right,
+/* harmony export */   "t$": () => /* binding */ left,
+/* harmony export */   "d7": () => /* binding */ auto,
+/* harmony export */   "mv": () => /* binding */ basePlacements,
+/* harmony export */   "BL": () => /* binding */ start,
+/* harmony export */   "ut": () => /* binding */ end,
+/* harmony export */   "zV": () => /* binding */ clippingParents,
+/* harmony export */   "Pj": () => /* binding */ viewport,
+/* harmony export */   "k5": () => /* binding */ popper,
+/* harmony export */   "YP": () => /* binding */ reference,
+/* harmony export */   "bw": () => /* binding */ variationPlacements,
+/* harmony export */   "Ct": () => /* binding */ placements,
+/* harmony export */   "xs": () => /* binding */ modifierPhases
+/* harmony export */ });
+/* unused harmony exports beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite */
+var top = 'top';
+var bottom = 'bottom';
+var right = 'right';
+var left = 'left';
+var auto = 'auto';
+var basePlacements = [top, bottom, right, left];
+var start = 'start';
+var end = 'end';
+var clippingParents = 'clippingParents';
+var viewport = 'viewport';
+var popper = 'popper';
+var reference = 'reference';
+var variationPlacements = /*#__PURE__*/basePlacements.reduce(function (acc, placement) {
+  return acc.concat([placement + "-" + start, placement + "-" + end]);
+}, []);
+var placements = /*#__PURE__*/[].concat(basePlacements, [auto]).reduce(function (acc, placement) {
+  return acc.concat([placement, placement + "-" + start, placement + "-" + end]);
+}, []); // modifiers that need to read the DOM
+
+var beforeRead = 'beforeRead';
+var read = 'read';
+var afterRead = 'afterRead'; // pure-logic modifiers
+
+var beforeMain = 'beforeMain';
+var main = 'main';
+var afterMain = 'afterMain'; // modifier with the purpose to write to the DOM (or write into a framework state)
+
+var beforeWrite = 'beforeWrite';
+var write = 'write';
+var afterWrite = 'afterWrite';
+var modifierPhases = [beforeRead, read, afterRead, beforeMain, main, afterMain, beforeWrite, write, afterWrite];
+
+/***/ }),
+
+/***/ 8100:
+/***/ ((__unused_webpack_module, __webpack_exports__, __webpack_require__) => {
+
+"use strict";
+// ESM COMPAT FLAG
+__webpack_require__.r(__webpack_exports__);
+
+// EXPORTS
+__webpack_require__.d(__webpack_exports__, {
+  "SWRConfig": () => /* reexport */ SWRConfig,
+  "cache": () => /* reexport */ config_cache,
+  "default": () => /* binding */ esm,
+  "mutate": () => /* reexport */ mutate,
+  "trigger": () => /* reexport */ trigger,
+  "useSWRInfinite": () => /* reexport */ useSWRInfinite
+});
+
+// EXTERNAL MODULE: external "React"
+var external_React_ = __webpack_require__(3804);
+;// CONCATENATED MODULE: ./node_modules/dequal/lite/index.mjs
+var has = Object.prototype.hasOwnProperty;
+
+function dequal(foo, bar) {
+	var ctor, len;
+	if (foo === bar) return true;
+
+	if (foo && bar && (ctor=foo.constructor) === bar.constructor) {
+		if (ctor === Date) return foo.getTime() === bar.getTime();
+		if (ctor === RegExp) return foo.toString() === bar.toString();
+
+		if (ctor === Array) {
+			if ((len=foo.length) === bar.length) {
+				while (len-- && dequal(foo[len], bar[len]));
+			}
+			return len === -1;
+		}
+
+		if (!ctor || typeof foo === 'object') {
+			len = 0;
+			for (ctor in foo) {
+				if (has.call(foo, ctor) && ++len && !has.call(bar, ctor)) return false;
+				if (!(ctor in bar) || !dequal(foo[ctor], bar[ctor])) return false;
+			}
+			return Object.keys(bar).length === len;
+		}
+	}
+
+	return foo !== foo && bar !== bar;
+}
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/libs/hash.js
+// use WeakMap to store the object->key mapping
+// so the objects can be garbage collected.
+// WeakMap uses a hashtable under the hood, so the lookup
+// complexity is almost O(1).
+var table = new WeakMap();
+// counter of the key
+var counter = 0;
+// hashes an array of objects and returns a string
+function hash(args) {
+    if (!args.length)
+        return '';
+    var key = 'arg';
+    for (var i = 0; i < args.length; ++i) {
+        var _hash = void 0;
+        if (args[i] === null ||
+            (typeof args[i] !== 'object' && typeof args[i] !== 'function')) {
+            // need to consider the case that args[i] is a string:
+            // args[i]        _hash
+            // "undefined" -> '"undefined"'
+            // undefined   -> 'undefined'
+            // 123         -> '123'
+            // null        -> 'null'
+            // "null"      -> '"null"'
+            if (typeof args[i] === 'string') {
+                _hash = '"' + args[i] + '"';
+            }
+            else {
+                _hash = String(args[i]);
+            }
+        }
+        else {
+            if (!table.has(args[i])) {
+                _hash = counter;
+                table.set(args[i], counter++);
+            }
+            else {
+                _hash = table.get(args[i]);
+            }
+        }
+        key += '@' + _hash;
+    }
+    return key;
+}
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/cache.js
+
+var Cache = /** @class */ (function () {
+    function Cache(initialData) {
+        if (initialData === void 0) { initialData = {}; }
+        this.__cache = new Map(Object.entries(initialData));
+        this.__listeners = [];
+    }
+    Cache.prototype.get = function (key) {
+        var _key = this.serializeKey(key)[0];
+        return this.__cache.get(_key);
+    };
+    Cache.prototype.set = function (key, value) {
+        var _key = this.serializeKey(key)[0];
+        this.__cache.set(_key, value);
+        this.notify();
+    };
+    Cache.prototype.keys = function () {
+        return Array.from(this.__cache.keys());
+    };
+    Cache.prototype.has = function (key) {
+        var _key = this.serializeKey(key)[0];
+        return this.__cache.has(_key);
+    };
+    Cache.prototype.clear = function () {
+        this.__cache.clear();
+        this.notify();
+    };
+    Cache.prototype.delete = function (key) {
+        var _key = this.serializeKey(key)[0];
+        this.__cache.delete(_key);
+        this.notify();
+    };
+    // TODO: introduce namespace for the cache
+    Cache.prototype.serializeKey = function (key) {
+        var args = null;
+        if (typeof key === 'function') {
+            try {
+                key = key();
+            }
+            catch (err) {
+                // dependencies not ready
+                key = '';
+            }
+        }
+        if (Array.isArray(key)) {
+            // args array
+            args = key;
+            key = hash(key);
+        }
+        else {
+            // convert null to ''
+            key = String(key || '');
+        }
+        var errorKey = key ? 'err@' + key : '';
+        var isValidatingKey = key ? 'validating@' + key : '';
+        return [key, args, errorKey, isValidatingKey];
+    };
+    Cache.prototype.subscribe = function (listener) {
+        var _this = this;
+        if (typeof listener !== 'function') {
+            throw new Error('Expected the listener to be a function.');
+        }
+        var isSubscribed = true;
+        this.__listeners.push(listener);
+        return function () {
+            if (!isSubscribed)
+                return;
+            isSubscribed = false;
+            var index = _this.__listeners.indexOf(listener);
+            if (index > -1) {
+                _this.__listeners[index] = _this.__listeners[_this.__listeners.length - 1];
+                _this.__listeners.length--;
+            }
+        };
+    };
+    // Notify Cache subscribers about a change in the cache
+    Cache.prototype.notify = function () {
+        for (var _i = 0, _a = this.__listeners; _i < _a.length; _i++) {
+            var listener = _a[_i];
+            listener();
+        }
+    };
+    return Cache;
+}());
+/* harmony default export */ const cache = (Cache);
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/libs/web-preset.js
+function isOnline() {
+    if (typeof navigator.onLine !== 'undefined') {
+        return navigator.onLine;
+    }
+    // always assume it's online
+    return true;
+}
+function isDocumentVisible() {
+    if (typeof document !== 'undefined' &&
+        typeof document.visibilityState !== 'undefined') {
+        return document.visibilityState !== 'hidden';
+    }
+    // always assume it's visible
+    return true;
+}
+var fetcher = function (url) { return fetch(url).then(function (res) { return res.json(); }); };
+/* harmony default export */ const web_preset = ({
+    isOnline: isOnline,
+    isDocumentVisible: isDocumentVisible,
+    fetcher: fetcher
+});
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/config.js
+
+
+
+// cache
+var config_cache = new cache();
+// error retry
+function onErrorRetry(_, __, config, revalidate, opts) {
+    if (!config.isDocumentVisible()) {
+        // if it's hidden, stop
+        // it will auto revalidate when focus
+        return;
+    }
+    if (typeof config.errorRetryCount === 'number' &&
+        opts.retryCount > config.errorRetryCount) {
+        return;
+    }
+    // exponential backoff
+    var count = Math.min(opts.retryCount || 0, 8);
+    var timeout = ~~((Math.random() + 0.5) * (1 << count)) * config.errorRetryInterval;
+    setTimeout(revalidate, timeout, opts);
+}
+// client side: need to adjust the config
+// based on the browser status
+// slow connection (<= 70Kbps)
+var slowConnection = typeof window !== 'undefined' &&
+    navigator['connection'] &&
+    ['slow-2g', '2g'].indexOf(navigator['connection'].effectiveType) !== -1;
+// config
+var defaultConfig = {
+    // events
+    onLoadingSlow: function () { },
+    onSuccess: function () { },
+    onError: function () { },
+    onErrorRetry: onErrorRetry,
+    errorRetryInterval: (slowConnection ? 10 : 5) * 1000,
+    focusThrottleInterval: 5 * 1000,
+    dedupingInterval: 2 * 1000,
+    loadingTimeout: (slowConnection ? 5 : 3) * 1000,
+    refreshInterval: 0,
+    revalidateOnFocus: true,
+    revalidateOnReconnect: true,
+    refreshWhenHidden: false,
+    refreshWhenOffline: false,
+    shouldRetryOnError: true,
+    suspense: false,
+    compare: dequal,
+    fetcher: web_preset.fetcher,
+    isOnline: web_preset.isOnline,
+    isDocumentVisible: web_preset.isDocumentVisible
+};
+
+/* harmony default export */ const esm_config = (defaultConfig);
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/swr-config-context.js
+
+var SWRConfigContext = (0,external_React_.createContext)({});
+SWRConfigContext.displayName = 'SWRConfigContext';
+/* harmony default export */ const swr_config_context = (SWRConfigContext);
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/use-swr.js
+var __awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var __generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+
+
+
+var IS_SERVER = typeof window === 'undefined' ||
+    // @ts-ignore
+    !!(typeof Deno !== 'undefined' && Deno && Deno.version && Deno.version.deno);
+// polyfill for requestAnimationFrame
+var rAF = IS_SERVER
+    ? null
+    : window['requestAnimationFrame'] || (function (f) { return setTimeout(f, 1); });
+// React currently throws a warning when using useLayoutEffect on the server.
+// To get around it, we can conditionally useEffect on the server (no-op) and
+// useLayoutEffect in the browser.
+var useIsomorphicLayoutEffect = IS_SERVER ? external_React_.useEffect : external_React_.useLayoutEffect;
+// global state managers
+var CONCURRENT_PROMISES = {};
+var CONCURRENT_PROMISES_TS = {};
+var FOCUS_REVALIDATORS = {};
+var RECONNECT_REVALIDATORS = {};
+var CACHE_REVALIDATORS = {};
+var MUTATION_TS = {};
+var MUTATION_END_TS = {};
+// generate strictly increasing timestamps
+var now = (function () {
+    var ts = 0;
+    return function () { return ts++; };
+})();
+// setup DOM events listeners for `focus` and `reconnect` actions
+if (!IS_SERVER && window.addEventListener) {
+    var revalidate_1 = function (revalidators) {
+        if (!esm_config.isDocumentVisible() || !esm_config.isOnline())
+            return;
+        for (var key in revalidators) {
+            if (revalidators[key][0])
+                revalidators[key][0]();
+        }
+    };
+    // focus revalidate
+    window.addEventListener('visibilitychange', function () { return revalidate_1(FOCUS_REVALIDATORS); }, false);
+    window.addEventListener('focus', function () { return revalidate_1(FOCUS_REVALIDATORS); }, false);
+    // reconnect revalidate
+    window.addEventListener('online', function () { return revalidate_1(RECONNECT_REVALIDATORS); }, false);
+}
+var trigger = function (_key, shouldRevalidate) {
+    if (shouldRevalidate === void 0) { shouldRevalidate = true; }
+    // we are ignoring the second argument which correspond to the arguments
+    // the fetcher will receive when key is an array
+    var _a = config_cache.serializeKey(_key), key = _a[0], keyErr = _a[2], keyValidating = _a[3];
+    if (!key)
+        return Promise.resolve();
+    var updaters = CACHE_REVALIDATORS[key];
+    if (key && updaters) {
+        var currentData = config_cache.get(key);
+        var currentError = config_cache.get(keyErr);
+        var currentIsValidating = config_cache.get(keyValidating);
+        var promises = [];
+        for (var i = 0; i < updaters.length; ++i) {
+            promises.push(updaters[i](shouldRevalidate, currentData, currentError, currentIsValidating, i > 0));
+        }
+        // return new updated value
+        return Promise.all(promises).then(function () { return config_cache.get(key); });
+    }
+    return Promise.resolve(config_cache.get(key));
+};
+var broadcastState = function (key, data, error, isValidating) {
+    var updaters = CACHE_REVALIDATORS[key];
+    if (key && updaters) {
+        for (var i = 0; i < updaters.length; ++i) {
+            updaters[i](false, data, error, isValidating);
+        }
+    }
+};
+var mutate = function (_key, _data, shouldRevalidate) {
+    if (shouldRevalidate === void 0) { shouldRevalidate = true; }
+    return __awaiter(void 0, void 0, void 0, function () {
+        var _a, key, keyErr, beforeMutationTs, beforeConcurrentPromisesTs, data, error, isAsyncMutation, err_1, shouldAbort, updaters, promises, i;
+        return __generator(this, function (_b) {
+            switch (_b.label) {
+                case 0:
+                    _a = config_cache.serializeKey(_key), key = _a[0], keyErr = _a[2];
+                    if (!key)
+                        return [2 /*return*/];
+                    // if there is no new data to update, let's just revalidate the key
+                    if (typeof _data === 'undefined')
+                        return [2 /*return*/, trigger(_key, shouldRevalidate)
+                            // update global timestamps
+                        ];
+                    // update global timestamps
+                    MUTATION_TS[key] = now() - 1;
+                    MUTATION_END_TS[key] = 0;
+                    beforeMutationTs = MUTATION_TS[key];
+                    beforeConcurrentPromisesTs = CONCURRENT_PROMISES_TS[key];
+                    isAsyncMutation = false;
+                    if (_data && typeof _data === 'function') {
+                        // `_data` is a function, call it passing current cache value
+                        try {
+                            _data = _data(config_cache.get(key));
+                        }
+                        catch (err) {
+                            error = err;
+                        }
+                    }
+                    if (!(_data && typeof _data.then === 'function')) return [3 /*break*/, 5];
+                    // `_data` is a promise
+                    isAsyncMutation = true;
+                    _b.label = 1;
+                case 1:
+                    _b.trys.push([1, 3, , 4]);
+                    return [4 /*yield*/, _data];
+                case 2:
+                    data = _b.sent();
+                    return [3 /*break*/, 4];
+                case 3:
+                    err_1 = _b.sent();
+                    error = err_1;
+                    return [3 /*break*/, 4];
+                case 4: return [3 /*break*/, 6];
+                case 5:
+                    data = _data;
+                    _b.label = 6;
+                case 6:
+                    shouldAbort = function () {
+                        // check if other mutations have occurred since we've started this mutation
+                        if (beforeMutationTs !== MUTATION_TS[key] ||
+                            beforeConcurrentPromisesTs !== CONCURRENT_PROMISES_TS[key]) {
+                            if (error)
+                                throw error;
+                            return true;
+                        }
+                    };
+                    // if there's a race we don't update cache or broadcast change, just return the data
+                    if (shouldAbort())
+                        return [2 /*return*/, data];
+                    if (typeof data !== 'undefined') {
+                        // update cached data
+                        config_cache.set(key, data);
+                    }
+                    // always update or reset the error
+                    config_cache.set(keyErr, error);
+                    // reset the timestamp to mark the mutation has ended
+                    MUTATION_END_TS[key] = now() - 1;
+                    if (!!isAsyncMutation) return [3 /*break*/, 8];
+                    // let's always broadcast in the next tick
+                    // to dedupe synchronous mutation calls
+                    // check out https://github.com/vercel/swr/pull/735 for more details
+                    return [4 /*yield*/, 0
+                        // we skip broadcasting if there's another mutation happened synchronously
+                    ];
+                case 7:
+                    // let's always broadcast in the next tick
+                    // to dedupe synchronous mutation calls
+                    // check out https://github.com/vercel/swr/pull/735 for more details
+                    _b.sent();
+                    // we skip broadcasting if there's another mutation happened synchronously
+                    if (shouldAbort())
+                        return [2 /*return*/, data];
+                    _b.label = 8;
+                case 8:
+                    updaters = CACHE_REVALIDATORS[key];
+                    if (updaters) {
+                        promises = [];
+                        for (i = 0; i < updaters.length; ++i) {
+                            promises.push(updaters[i](!!shouldRevalidate, data, error, undefined, i > 0));
+                        }
+                        // return new updated value
+                        return [2 /*return*/, Promise.all(promises).then(function () {
+                                if (error)
+                                    throw error;
+                                return config_cache.get(key);
+                            })];
+                    }
+                    // throw error or return data to be used by caller of mutate
+                    if (error)
+                        throw error;
+                    return [2 /*return*/, data];
+            }
+        });
+    });
+};
+function useSWR() {
+    var _this = this;
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var _key, fn, config = {};
+    if (args.length >= 1) {
+        _key = args[0];
+    }
+    if (args.length > 2) {
+        fn = args[1];
+        config = args[2];
+    }
+    else {
+        if (typeof args[1] === 'function') {
+            fn = args[1];
+        }
+        else if (typeof args[1] === 'object') {
+            config = args[1];
+        }
+    }
+    // we assume `key` as the identifier of the request
+    // `key` can change but `fn` shouldn't
+    // (because `revalidate` only depends on `key`)
+    // `keyErr` is the cache key for error objects
+    var _a = config_cache.serializeKey(_key), key = _a[0], fnArgs = _a[1], keyErr = _a[2], keyValidating = _a[3];
+    config = Object.assign({}, esm_config, (0,external_React_.useContext)(swr_config_context), config);
+    var configRef = (0,external_React_.useRef)(config);
+    useIsomorphicLayoutEffect(function () {
+        configRef.current = config;
+    });
+    if (typeof fn === 'undefined') {
+        // use the global fetcher
+        fn = config.fetcher;
+    }
+    var resolveData = function () {
+        var cachedData = config_cache.get(key);
+        return typeof cachedData === 'undefined' ? config.initialData : cachedData;
+    };
+    var initialData = resolveData();
+    var initialError = config_cache.get(keyErr);
+    var initialIsValidating = !!config_cache.get(keyValidating);
+    // if a state is accessed (data, error or isValidating),
+    // we add the state to dependencies so if the state is
+    // updated in the future, we can trigger a rerender
+    var stateDependencies = (0,external_React_.useRef)({
+        data: false,
+        error: false,
+        isValidating: false
+    });
+    var stateRef = (0,external_React_.useRef)({
+        data: initialData,
+        error: initialError,
+        isValidating: initialIsValidating
+    });
+    // display the data label in the React DevTools next to SWR hooks
+    (0,external_React_.useDebugValue)(stateRef.current.data);
+    var rerender = (0,external_React_.useState)(null)[1];
+    var dispatch = (0,external_React_.useCallback)(function (payload) {
+        var shouldUpdateState = false;
+        for (var k in payload) {
+            if (stateRef.current[k] === payload[k]) {
+                continue;
+            }
+            stateRef.current[k] = payload[k];
+            if (stateDependencies.current[k]) {
+                shouldUpdateState = true;
+            }
+        }
+        if (shouldUpdateState || config.suspense) {
+            // if component is unmounted, should skip rerender
+            // if component is not mounted, should skip rerender
+            if (unmountedRef.current || !initialMountedRef.current)
+                return;
+            rerender({});
+        }
+    }, []);
+    // error ref inside revalidate (is last request errored?)
+    var unmountedRef = (0,external_React_.useRef)(false);
+    var keyRef = (0,external_React_.useRef)(key);
+    // check if component is mounted in suspense mode
+    var initialMountedRef = (0,external_React_.useRef)(false);
+    // do unmount check for callbacks
+    var eventsRef = (0,external_React_.useRef)({
+        emit: function (event) {
+            var _a;
+            var params = [];
+            for (var _i = 1; _i < arguments.length; _i++) {
+                params[_i - 1] = arguments[_i];
+            }
+            if (unmountedRef.current)
+                return;
+            (_a = configRef.current)[event].apply(_a, params);
+        }
+    });
+    var boundMutate = (0,external_React_.useCallback)(function (data, shouldRevalidate) {
+        return mutate(keyRef.current, data, shouldRevalidate);
+    }, []);
+    var addRevalidator = function (revalidators, callback) {
+        if (!callback)
+            return;
+        if (!revalidators[key]) {
+            revalidators[key] = [callback];
+        }
+        else {
+            revalidators[key].push(callback);
+        }
+    };
+    var removeRevalidator = function (revlidators, callback) {
+        if (revlidators[key]) {
+            var revalidators = revlidators[key];
+            var index = revalidators.indexOf(callback);
+            if (index >= 0) {
+                // 10x faster than splice
+                // https://jsperf.com/array-remove-by-index
+                revalidators[index] = revalidators[revalidators.length - 1];
+                revalidators.pop();
+            }
+        }
+    };
+    // start a revalidation
+    var revalidate = (0,external_React_.useCallback)(function (revalidateOpts) {
+        if (revalidateOpts === void 0) { revalidateOpts = {}; }
+        return __awaiter(_this, void 0, void 0, function () {
+            var loading, shouldDeduping, newData, startAt, shouldIgnoreRequest, newState, err_2, retryCount;
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!key || !fn)
+                            return [2 /*return*/, false];
+                        if (unmountedRef.current)
+                            return [2 /*return*/, false];
+                        revalidateOpts = Object.assign({ dedupe: false }, revalidateOpts);
+                        loading = true;
+                        shouldDeduping = typeof CONCURRENT_PROMISES[key] !== 'undefined' && revalidateOpts.dedupe;
+                        _a.label = 1;
+                    case 1:
+                        _a.trys.push([1, 6, , 7]);
+                        dispatch({
+                            isValidating: true
+                        });
+                        config_cache.set(keyValidating, true);
+                        if (!shouldDeduping) {
+                            // also update other hooks
+                            broadcastState(key, stateRef.current.data, stateRef.current.error, true);
+                        }
+                        newData = void 0;
+                        startAt = void 0;
+                        if (!shouldDeduping) return [3 /*break*/, 3];
+                        // there's already an ongoing request,
+                        // this one needs to be deduplicated.
+                        startAt = CONCURRENT_PROMISES_TS[key];
+                        return [4 /*yield*/, CONCURRENT_PROMISES[key]];
+                    case 2:
+                        newData = _a.sent();
+                        return [3 /*break*/, 5];
+                    case 3:
+                        // if no cache being rendered currently (it shows a blank page),
+                        // we trigger the loading slow event.
+                        if (config.loadingTimeout && !config_cache.get(key)) {
+                            setTimeout(function () {
+                                if (loading)
+                                    eventsRef.current.emit('onLoadingSlow', key, config);
+                            }, config.loadingTimeout);
+                        }
+                        if (fnArgs !== null) {
+                            CONCURRENT_PROMISES[key] = fn.apply(void 0, fnArgs);
+                        }
+                        else {
+                            CONCURRENT_PROMISES[key] = fn(key);
+                        }
+                        CONCURRENT_PROMISES_TS[key] = startAt = now();
+                        return [4 /*yield*/, CONCURRENT_PROMISES[key]];
+                    case 4:
+                        newData = _a.sent();
+                        setTimeout(function () {
+                            delete CONCURRENT_PROMISES[key];
+                            delete CONCURRENT_PROMISES_TS[key];
+                        }, config.dedupingInterval);
+                        // trigger the success event,
+                        // only do this for the original request.
+                        eventsRef.current.emit('onSuccess', newData, key, config);
+                        _a.label = 5;
+                    case 5:
+                        shouldIgnoreRequest = 
+                        // if there're other ongoing request(s), started after the current one,
+                        // we need to ignore the current one to avoid possible race conditions:
+                        //   req1------------------>res1        (current one)
+                        //        req2---------------->res2
+                        // the request that fired later will always be kept.
+                        CONCURRENT_PROMISES_TS[key] > startAt ||
+                            // if there're other mutations(s), overlapped with the current revalidation:
+                            // case 1:
+                            //   req------------------>res
+                            //       mutate------>end
+                            // case 2:
+                            //         req------------>res
+                            //   mutate------>end
+                            // case 3:
+                            //   req------------------>res
+                            //       mutate-------...---------->
+                            // we have to ignore the revalidation result (res) because it's no longer fresh.
+                            // meanwhile, a new revalidation should be triggered when the mutation ends.
+                            (MUTATION_TS[key] &&
+                                // case 1
+                                (startAt <= MUTATION_TS[key] ||
+                                    // case 2
+                                    startAt <= MUTATION_END_TS[key] ||
+                                    // case 3
+                                    MUTATION_END_TS[key] === 0));
+                        if (shouldIgnoreRequest) {
+                            dispatch({ isValidating: false });
+                            return [2 /*return*/, false];
+                        }
+                        config_cache.set(key, newData);
+                        config_cache.set(keyErr, undefined);
+                        config_cache.set(keyValidating, false);
+                        newState = {
+                            isValidating: false
+                        };
+                        if (typeof stateRef.current.error !== 'undefined') {
+                            // we don't have an error
+                            newState.error = undefined;
+                        }
+                        if (!config.compare(stateRef.current.data, newData)) {
+                            // deep compare to avoid extra re-render
+                            // data changed
+                            newState.data = newData;
+                        }
+                        // merge the new state
+                        dispatch(newState);
+                        if (!shouldDeduping) {
+                            // also update other hooks
+                            broadcastState(key, newData, newState.error, false);
+                        }
+                        return [3 /*break*/, 7];
+                    case 6:
+                        err_2 = _a.sent();
+                        delete CONCURRENT_PROMISES[key];
+                        delete CONCURRENT_PROMISES_TS[key];
+                        config_cache.set(keyErr, err_2);
+                        // get a new error
+                        // don't use deep equal for errors
+                        if (stateRef.current.error !== err_2) {
+                            // we keep the stale data
+                            dispatch({
+                                isValidating: false,
+                                error: err_2
+                            });
+                            if (!shouldDeduping) {
+                                // also broadcast to update other hooks
+                                broadcastState(key, undefined, err_2, false);
+                            }
+                        }
+                        // events and retry
+                        eventsRef.current.emit('onError', err_2, key, config);
+                        if (config.shouldRetryOnError) {
+                            retryCount = (revalidateOpts.retryCount || 0) + 1;
+                            eventsRef.current.emit('onErrorRetry', err_2, key, config, revalidate, Object.assign({ dedupe: true }, revalidateOpts, { retryCount: retryCount }));
+                        }
+                        return [3 /*break*/, 7];
+                    case 7:
+                        loading = false;
+                        return [2 /*return*/, true];
+                }
+            });
+        });
+    }, [key]);
+    // mounted (client side rendering)
+    useIsomorphicLayoutEffect(function () {
+        if (!key)
+            return undefined;
+        // after `key` updates, we need to mark it as mounted
+        unmountedRef.current = false;
+        initialMountedRef.current = true;
+        // after the component is mounted (hydrated),
+        // we need to update the data from the cache
+        // and trigger a revalidation
+        var currentHookData = stateRef.current.data;
+        var latestKeyedData = resolveData();
+        // update the state if the key changed (not the inital render) or cache updated
+        if (keyRef.current !== key) {
+            keyRef.current = key;
+        }
+        if (!config.compare(currentHookData, latestKeyedData)) {
+            dispatch({ data: latestKeyedData });
+        }
+        // revalidate with deduping
+        var softRevalidate = function () { return revalidate({ dedupe: true }); };
+        // trigger a revalidation
+        if (config.revalidateOnMount ||
+            (!config.initialData && config.revalidateOnMount === undefined)) {
+            if (typeof latestKeyedData !== 'undefined') {
+                // delay revalidate if there's cache
+                // to not block the rendering
+                rAF(softRevalidate);
+            }
+            else {
+                softRevalidate();
+            }
+        }
+        var pending = false;
+        var onFocus = function () {
+            if (pending || !configRef.current.revalidateOnFocus)
+                return;
+            pending = true;
+            softRevalidate();
+            setTimeout(function () { return (pending = false); }, configRef.current.focusThrottleInterval);
+        };
+        var onReconnect = function () {
+            if (configRef.current.revalidateOnReconnect) {
+                softRevalidate();
+            }
+        };
+        // register global cache update listener
+        var onUpdate = function (shouldRevalidate, updatedData, updatedError, updatedIsValidating, dedupe) {
+            if (shouldRevalidate === void 0) { shouldRevalidate = true; }
+            if (dedupe === void 0) { dedupe = true; }
+            // update hook state
+            var newState = {};
+            var needUpdate = false;
+            if (typeof updatedData !== 'undefined' &&
+                !config.compare(stateRef.current.data, updatedData)) {
+                newState.data = updatedData;
+                needUpdate = true;
+            }
+            // always update error
+            // because it can be `undefined`
+            if (stateRef.current.error !== updatedError) {
+                newState.error = updatedError;
+                needUpdate = true;
+            }
+            if (typeof updatedIsValidating !== 'undefined' &&
+                stateRef.current.isValidating !== updatedIsValidating) {
+                newState.isValidating = updatedIsValidating;
+                needUpdate = true;
+            }
+            if (needUpdate) {
+                dispatch(newState);
+            }
+            if (shouldRevalidate) {
+                if (dedupe) {
+                    return softRevalidate();
+                }
+                else {
+                    return revalidate();
+                }
+            }
+            return false;
+        };
+        addRevalidator(FOCUS_REVALIDATORS, onFocus);
+        addRevalidator(RECONNECT_REVALIDATORS, onReconnect);
+        addRevalidator(CACHE_REVALIDATORS, onUpdate);
+        return function () {
+            // cleanup
+            dispatch = function () { return null; };
+            // mark it as unmounted
+            unmountedRef.current = true;
+            removeRevalidator(FOCUS_REVALIDATORS, onFocus);
+            removeRevalidator(RECONNECT_REVALIDATORS, onReconnect);
+            removeRevalidator(CACHE_REVALIDATORS, onUpdate);
+        };
+    }, [key, revalidate]);
+    useIsomorphicLayoutEffect(function () {
+        var timer = null;
+        var tick = function () { return __awaiter(_this, void 0, void 0, function () {
+            return __generator(this, function (_a) {
+                switch (_a.label) {
+                    case 0:
+                        if (!(!stateRef.current.error &&
+                            (configRef.current.refreshWhenHidden ||
+                                configRef.current.isDocumentVisible()) &&
+                            (configRef.current.refreshWhenOffline || configRef.current.isOnline()))) return [3 /*break*/, 2];
+                        // only revalidate when the page is visible
+                        // if API request errored, we stop polling in this round
+                        // and let the error retry function handle it
+                        return [4 /*yield*/, revalidate({ dedupe: true })];
+                    case 1:
+                        // only revalidate when the page is visible
+                        // if API request errored, we stop polling in this round
+                        // and let the error retry function handle it
+                        _a.sent();
+                        _a.label = 2;
+                    case 2:
+                        // Read the latest refreshInterval
+                        if (configRef.current.refreshInterval && !stateRef.current.error) {
+                            timer = setTimeout(tick, configRef.current.refreshInterval);
+                        }
+                        return [2 /*return*/];
+                }
+            });
+        }); };
+        if (configRef.current.refreshInterval) {
+            timer = setTimeout(tick, configRef.current.refreshInterval);
+        }
+        return function () {
+            if (timer)
+                clearTimeout(timer);
+        };
+    }, [
+        config.refreshInterval,
+        config.refreshWhenHidden,
+        config.refreshWhenOffline,
+        revalidate
+    ]);
+    // define returned state
+    // can be memorized since the state is a ref
+    var memoizedState = (0,external_React_.useMemo)(function () {
+        var state = { revalidate: revalidate, mutate: boundMutate };
+        Object.defineProperties(state, {
+            error: {
+                // `key` might be changed in the upcoming hook re-render,
+                // but the previous state will stay
+                // so we need to match the latest key and data (fallback to `initialData`)
+                get: function () {
+                    stateDependencies.current.error = true;
+                    return keyRef.current === key ? stateRef.current.error : initialError;
+                },
+                enumerable: true
+            },
+            data: {
+                get: function () {
+                    stateDependencies.current.data = true;
+                    return keyRef.current === key ? stateRef.current.data : initialData;
+                },
+                enumerable: true
+            },
+            isValidating: {
+                get: function () {
+                    stateDependencies.current.isValidating = true;
+                    return stateRef.current.isValidating;
+                },
+                enumerable: true
+            }
+        });
+        return state;
+    }, [revalidate]);
+    // suspense
+    if (config.suspense) {
+        // in suspense mode, we can't return empty state
+        // (it should be suspended)
+        // try to get data and error from cache
+        var latestData = config_cache.get(key);
+        var latestError = config_cache.get(keyErr);
+        if (typeof latestData === 'undefined') {
+            latestData = initialData;
+        }
+        if (typeof latestError === 'undefined') {
+            latestError = initialError;
+        }
+        if (typeof latestData === 'undefined' &&
+            typeof latestError === 'undefined') {
+            // need to start the request if it hasn't
+            if (!CONCURRENT_PROMISES[key]) {
+                // trigger revalidate immediately
+                // to get the promise
+                // in this revalidate, should not rerender
+                revalidate();
+            }
+            if (CONCURRENT_PROMISES[key] &&
+                typeof CONCURRENT_PROMISES[key].then === 'function') {
+                // if it is a promise
+                throw CONCURRENT_PROMISES[key];
+            }
+            // it's a value, return it directly (override)
+            latestData = CONCURRENT_PROMISES[key];
+        }
+        if (typeof latestData === 'undefined' && latestError) {
+            // in suspense mode, throw error if there's no content
+            throw latestError;
+        }
+        // return the latest data / error from cache
+        // in case `key` has changed
+        return {
+            error: latestError,
+            data: latestData,
+            revalidate: revalidate,
+            mutate: boundMutate,
+            isValidating: stateRef.current.isValidating
+        };
+    }
+    return memoizedState;
+}
+var SWRConfig = swr_config_context.Provider;
+
+/* harmony default export */ const use_swr = (useSWR);
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/use-swr-infinite.js
+var __assign = (undefined && undefined.__assign) || function () {
+    __assign = Object.assign || function(t) {
+        for (var s, i = 1, n = arguments.length; i < n; i++) {
+            s = arguments[i];
+            for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p))
+                t[p] = s[p];
+        }
+        return t;
+    };
+    return __assign.apply(this, arguments);
+};
+var use_swr_infinite_awaiter = (undefined && undefined.__awaiter) || function (thisArg, _arguments, P, generator) {
+    function adopt(value) { return value instanceof P ? value : new P(function (resolve) { resolve(value); }); }
+    return new (P || (P = Promise))(function (resolve, reject) {
+        function fulfilled(value) { try { step(generator.next(value)); } catch (e) { reject(e); } }
+        function rejected(value) { try { step(generator["throw"](value)); } catch (e) { reject(e); } }
+        function step(result) { result.done ? resolve(result.value) : adopt(result.value).then(fulfilled, rejected); }
+        step((generator = generator.apply(thisArg, _arguments || [])).next());
+    });
+};
+var use_swr_infinite_generator = (undefined && undefined.__generator) || function (thisArg, body) {
+    var _ = { label: 0, sent: function() { if (t[0] & 1) throw t[1]; return t[1]; }, trys: [], ops: [] }, f, y, t, g;
+    return g = { next: verb(0), "throw": verb(1), "return": verb(2) }, typeof Symbol === "function" && (g[Symbol.iterator] = function() { return this; }), g;
+    function verb(n) { return function (v) { return step([n, v]); }; }
+    function step(op) {
+        if (f) throw new TypeError("Generator is already executing.");
+        while (_) try {
+            if (f = 1, y && (t = op[0] & 2 ? y["return"] : op[0] ? y["throw"] || ((t = y["return"]) && t.call(y), 0) : y.next) && !(t = t.call(y, op[1])).done) return t;
+            if (y = 0, t) op = [op[0] & 2, t.value];
+            switch (op[0]) {
+                case 0: case 1: t = op; break;
+                case 4: _.label++; return { value: op[1], done: false };
+                case 5: _.label++; y = op[1]; op = [0]; continue;
+                case 7: op = _.ops.pop(); _.trys.pop(); continue;
+                default:
+                    if (!(t = _.trys, t = t.length > 0 && t[t.length - 1]) && (op[0] === 6 || op[0] === 2)) { _ = 0; continue; }
+                    if (op[0] === 3 && (!t || (op[1] > t[0] && op[1] < t[3]))) { _.label = op[1]; break; }
+                    if (op[0] === 6 && _.label < t[1]) { _.label = t[1]; t = op; break; }
+                    if (t && _.label < t[2]) { _.label = t[2]; _.ops.push(op); break; }
+                    if (t[2]) _.ops.pop();
+                    _.trys.pop(); continue;
+            }
+            op = body.call(thisArg, _);
+        } catch (e) { op = [6, e]; y = 0; } finally { f = t = 0; }
+        if (op[0] & 5) throw op[1]; return { value: op[0] ? op[1] : void 0, done: true };
+    }
+};
+var __rest = (undefined && undefined.__rest) || function (s, e) {
+    var t = {};
+    for (var p in s) if (Object.prototype.hasOwnProperty.call(s, p) && e.indexOf(p) < 0)
+        t[p] = s[p];
+    if (s != null && typeof Object.getOwnPropertySymbols === "function")
+        for (var i = 0, p = Object.getOwnPropertySymbols(s); i < p.length; i++) {
+            if (e.indexOf(p[i]) < 0 && Object.prototype.propertyIsEnumerable.call(s, p[i]))
+                t[p[i]] = s[p[i]];
+        }
+    return t;
+};
+
+
+
+
+function useSWRInfinite() {
+    var _this = this;
+    var args = [];
+    for (var _i = 0; _i < arguments.length; _i++) {
+        args[_i] = arguments[_i];
+    }
+    var getKey, fn, config = {};
+    if (args.length >= 1) {
+        getKey = args[0];
+    }
+    if (args.length > 2) {
+        fn = args[1];
+        config = args[2];
+    }
+    else {
+        if (typeof args[1] === 'function') {
+            fn = args[1];
+        }
+        else if (typeof args[1] === 'object') {
+            config = args[1];
+        }
+    }
+    config = Object.assign({}, esm_config, (0,external_React_.useContext)(swr_config_context), config);
+    var _a = config.initialSize, initialSize = _a === void 0 ? 1 : _a, _b = config.revalidateAll, revalidateAll = _b === void 0 ? false : _b, _c = config.persistSize, persistSize = _c === void 0 ? false : _c, defaultFetcher = config.fetcher, extraConfig = __rest(config, ["initialSize", "revalidateAll", "persistSize", "fetcher"]);
+    if (typeof fn === 'undefined') {
+        // use the global fetcher
+        // we have to convert the type here
+        fn = defaultFetcher;
+    }
+    // get the serialized key of the first page
+    var firstPageKey = null;
+    try {
+        ;
+        firstPageKey = config_cache.serializeKey(getKey(0, null))[0];
+    }
+    catch (err) {
+        // not ready
+    }
+    var rerender = (0,external_React_.useState)(false)[1];
+    // we use cache to pass extra info (context) to fetcher so it can be globally shared
+    // here we get the key of the fetcher context cache
+    var contextCacheKey = null;
+    if (firstPageKey) {
+        contextCacheKey = 'context@' + firstPageKey;
+    }
+    // page count is cached as well, so when navigating the list can be restored
+    var pageCountCacheKey = null;
+    var cachedPageSize;
+    if (firstPageKey) {
+        pageCountCacheKey = 'size@' + firstPageKey;
+        cachedPageSize = config_cache.get(pageCountCacheKey);
+    }
+    var pageCountRef = (0,external_React_.useRef)(cachedPageSize || initialSize);
+    var didMountRef = (0,external_React_.useRef)(false);
+    // every time the key changes, we reset the page size if it's not persisted
+    (0,external_React_.useEffect)(function () {
+        if (didMountRef.current) {
+            if (!persistSize) {
+                pageCountRef.current = initialSize;
+            }
+        }
+        else {
+            didMountRef.current = true;
+        }
+    }, [firstPageKey]);
+    // actual swr of all pages
+    var swr = use_swr(firstPageKey ? ['many', firstPageKey] : null, function () { return use_swr_infinite_awaiter(_this, void 0, void 0, function () {
+        var _a, originalData, force, data, previousPageData, i, _b, pageKey, pageArgs, pageData, shouldRevalidatePage;
+        return use_swr_infinite_generator(this, function (_c) {
+            switch (_c.label) {
+                case 0:
+                    _a = config_cache.get(contextCacheKey) || {}, originalData = _a.originalData, force = _a.force;
+                    data = [];
+                    previousPageData = null;
+                    i = 0;
+                    _c.label = 1;
+                case 1:
+                    if (!(i < pageCountRef.current)) return [3 /*break*/, 8];
+                    _b = config_cache.serializeKey(getKey(i, previousPageData)), pageKey = _b[0], pageArgs = _b[1];
+                    if (!pageKey) {
+                        // pageKey is falsy, stop fetching next pages
+                        return [3 /*break*/, 8];
+                    }
+                    pageData = config_cache.get(pageKey);
+                    shouldRevalidatePage = revalidateAll ||
+                        force ||
+                        (typeof force === 'undefined' && i === 0) ||
+                        (originalData && !config.compare(originalData[i], pageData)) ||
+                        typeof pageData === 'undefined';
+                    if (!shouldRevalidatePage) return [3 /*break*/, 6];
+                    if (!(pageArgs !== null)) return [3 /*break*/, 3];
+                    return [4 /*yield*/, fn.apply(void 0, pageArgs)];
+                case 2:
+                    pageData = _c.sent();
+                    return [3 /*break*/, 5];
+                case 3: return [4 /*yield*/, fn(pageKey)];
+                case 4:
+                    pageData = _c.sent();
+                    _c.label = 5;
+                case 5:
+                    config_cache.set(pageKey, pageData);
+                    _c.label = 6;
+                case 6:
+                    data.push(pageData);
+                    previousPageData = pageData;
+                    _c.label = 7;
+                case 7:
+                    ++i;
+                    return [3 /*break*/, 1];
+                case 8:
+                    // once we executed the data fetching based on the context, clear the context
+                    config_cache.delete(contextCacheKey);
+                    // return the data
+                    return [2 /*return*/, data];
+            }
+        });
+    }); }, extraConfig);
+    // keep the data inside a ref
+    var dataRef = (0,external_React_.useRef)(swr.data);
+    (0,external_React_.useEffect)(function () {
+        dataRef.current = swr.data;
+    }, [swr.data]);
+    var mutate = (0,external_React_.useCallback)(function (data, shouldRevalidate) {
+        if (shouldRevalidate === void 0) { shouldRevalidate = true; }
+        if (shouldRevalidate && typeof data !== 'undefined') {
+            // we only revalidate the pages that are changed
+            var originalData = dataRef.current;
+            config_cache.set(contextCacheKey, { originalData: originalData, force: false });
+        }
+        else if (shouldRevalidate) {
+            // calling `mutate()`, we revalidate all pages
+            config_cache.set(contextCacheKey, { force: true });
+        }
+        return swr.mutate(data, shouldRevalidate);
+    }, [swr.mutate, contextCacheKey]);
+    // extend the SWR API
+    var size = pageCountRef.current;
+    var setSize = (0,external_React_.useCallback)(function (arg) {
+        if (typeof arg === 'function') {
+            pageCountRef.current = arg(pageCountRef.current);
+        }
+        else if (typeof arg === 'number') {
+            pageCountRef.current = arg;
+        }
+        config_cache.set(pageCountCacheKey, pageCountRef.current);
+        rerender(function (v) { return !v; });
+        return mutate(function (v) { return v; });
+    }, [mutate, pageCountCacheKey]);
+    return __assign(__assign({}, swr), { mutate: mutate,
+        size: size,
+        setSize: setSize });
+}
+
+
+;// CONCATENATED MODULE: ./node_modules/swr/esm/index.js
+
+
+
+
+/* harmony default export */ const esm = (use_swr);
+
+
+/***/ })
+
+}]);
 //# sourceMappingURL=772.js.map

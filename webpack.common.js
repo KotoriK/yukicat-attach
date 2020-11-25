@@ -3,7 +3,7 @@ const webpack = require('webpack')
 module.exports = {
     //入口点
     entry: {
-        post:'./src/postpage.ts',
+        post:'./src/post.ts',
         pv:'./src/pageview.tsx'
     },
     devtool: 'inline-source-map',
