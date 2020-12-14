@@ -13,8 +13,10 @@
   "dependencies": {
     "@popperjs/core": "^2.5.4",
     "face-pack": "git+https://github.com/YukiCat-Dev/FacePack.git",
+    "jss": "^10.5.0",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-jss": "^10.5.0",
     "react-popper": "^2.2.4",
     "simple-img-modal": "git+https://github.com/KotoriK/simple-img-modal.git",
     "swr": "^0.3.8"

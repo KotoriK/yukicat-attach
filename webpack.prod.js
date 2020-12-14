@@ -13,11 +13,11 @@ module.exports = merge(common, {
             {test:/\.js$/,terserOptions: {
                 ecma: 2020,}},)
         ],
-        /* splitChunks: {
-            chunks: "all",
+        splitChunks: {
+            /* chunks: "all",
             minSize: 3000,
             minChunks: 1,
-          /*   cacheGroups: {
+             cacheGroups: {
                 commons: {
                     test: /[\\/]node_modules[\\/]/,
                     // cacheGroupKey here is `commons` as the key of the cacheGroup
@@ -32,8 +32,8 @@ module.exports = merge(common, {
                     enforce: true,
                 },
             }, 
-        }, 
-    }, */
+        },  */
+    },
     },
     module: {
         rules: [
