@@ -4,11 +4,7 @@ import { FacePackage } from 'face-pack/src/FacePackage'
 
 export default (facePackages: FacePackage[]) => {
     const display = new FaceDisplay(facePackages)
-    document.querySelectorAll('article.hentry p:not(.ct-respond-form-textarea):not(.form-submit)').forEach((v) => {
-        if (v.childElementCount > 0) {
-            Array.from(v.childNodes).forEach(n=>display.render(n))
-        } else {
-            display.render(v)
-        }
+    document.querySelectorAll('article.hentry p:not(.ct-respond-form-textarea):not(.form-submit)').forEach(v => {
+            display.render(v as HTMLElement)  
     })
 }
