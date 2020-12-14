@@ -6,7 +6,7 @@ export default (facePackages: FacePackage[]) => {
     const display = new FaceDisplay(facePackages)
     document.querySelectorAll('article.hentry p:not(.ct-respond-form-textarea):not(.form-submit)').forEach((v) => {
         if (v.childElementCount > 0) {
-            Array.from(v.childNodes).forEach(display.render)
+            Array.from(v.childNodes).forEach(n=>display.render(n))
         } else {
             display.render(v)
         }
