@@ -8,11 +8,11 @@ const TerserPlugin = require('terser-webpack-plugin')
 module.exports = merge(common, {
     mode: 'production',
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({}),
+       /*  minimizer: [new OptimizeCSSAssetsPlugin({}),
             new TerserPlugin(
             {test:/\.js$/,terserOptions: {
                 ecma: 2020,}},)
-        ],
+        ], */
         splitChunks: {
             /* chunks: "all",
             minSize: 3000,

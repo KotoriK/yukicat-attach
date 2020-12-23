@@ -1,29 +1,14 @@
 /**部署样板 */
 import { FacePackage } from 'face-pack/src/FacePackage'
-import FaceSelectorDeployer from 'face-pack/src/FaceSelector/FaceSelectorDeployer'
-const handleSelect = (() => {
-    let cache
-    return () => {
-        if (cache) { return cache }
-        else {
-            const wpdiscuz = document.querySelector('div.ql-editor > p:nth-last-child(1)')
-            let legacy_blocksy
-            const result = wpdiscuz ? (pack, face) => wpdiscuz.innerHTML += `:${pack.id}.${face.id}:` : (legacy_blocksy = (document.getElementById('comment') as HTMLTextAreaElement), (pack, face) =>
-                legacy_blocksy.value += `:${pack.id}.${face.id}:`)
-            cache = result
-            return result
-        }
-    }
-})()
-export default  (facePackages:FacePackage[]) => {
-    const tooltip = document.documentElement.appendChild(document.createElement('div'))
-    tooltip.style.zIndex = '999'
-    new FaceSelectorDeployer({
-        popcorn: document.getElementById('show-fs'),
-        tooltip,
+import FaceSelectorDeployer from 'face-pack/src/FaceSelector/deployer/FaceSelectorDeployer'
+
+export default (facePackages: FacePackage[]) => {
+    const comment = document.querySelector('#comment')
+    const handleSelect = (pack, face) => (comment as HTMLTextAreaElement).value += `:${pack.id}.${face.id}:`
+    const deployer = new FaceSelectorDeployer({
         facePackages,
-        onFaceSelected: handleSelect(),
-        popperOptions: { placement: 'top' }, peakPopperOptions: {
+        onFaceSelected: handleSelect,
+        peakPopperOptions: {
             placement: "right", modifiers: [
                 {
                     name: 'offset',
@@ -32,6 +17,10 @@ export default  (facePackages:FacePackage[]) => {
                     },
                 },
             ],
-        }
-    }).render().hide()
+        }, self: document.querySelector('.emotion-box'),className:' '
+
+    }).render().switchHide()
+    document.getElementById('emotion-toggle').addEventListener('click',()=>{
+        deployer.switchHide()
+    })
 }

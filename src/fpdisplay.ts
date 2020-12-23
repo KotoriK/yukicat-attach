@@ -5,6 +5,6 @@ import { FacePackage } from 'face-pack/src/FacePackage'
 export default (facePackages: FacePackage[]) => {
     const display = new FaceDisplay(facePackages)
     document.querySelectorAll('article.hentry p:not(.ct-respond-form-textarea):not(.form-submit)').forEach(v => {
-            display.render(v as HTMLElement)  
+            display.render(v)  
     })
 }
