@@ -4,7 +4,7 @@ module.exports = {
     //入口点
     entry: {
         post: './src/post.ts',
-        pv: './src/pageview.tsx'
+        pv: './src/pv.ts'
     },
     devtool: 'inline-source-map',
     output: {

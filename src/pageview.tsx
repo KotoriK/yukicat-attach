@@ -71,7 +71,7 @@ const DetailPannel = forwardRef<HTMLDivElement, { data: PVDate, style: CSSProper
 const swrOption = {
     fetcher: (path) => fetch(path).then(r => r.json()), revalidateOnFocus: false, revalidateOnReconnect: false
 }
-function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
+export function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     const path = path_raw + (path_raw.endsWith('/') ? '' : '/')
     const { data, error } = useSWR<PVDate>(API_PREFIX + path, swrOption)
     const _rawHit = raw.replace(/<\/?span>/g, '')
@@ -102,7 +102,7 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
     </>
 }
 
-(() => {
+export const initPV=() => {
     const colle = document.getElementsByClassName('meta-page-view')
     for (let i = 0; i < colle.length; i++) {
         const e = colle[i],
@@ -110,5 +110,4 @@ function PageView({ path: path_raw, raw }: { path: string, raw: string }) {
             raw = e.innerHTML
         hydrate(<PageView path={path} raw={raw} />, e)
     }
-    console.log('loaded')
-})()
+}
