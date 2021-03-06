@@ -11,7 +11,7 @@
         "noImplicitReturns": false,
         "noImplicitThis": true,
         "pretty": true,
-        "jsx": "react",
+        "jsx": "react-jsx",
         "resolveJsonModule": true,
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
