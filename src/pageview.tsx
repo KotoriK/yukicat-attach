@@ -91,6 +91,7 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
         const listener = ()=>{
             update()
         }
+        update()
         document.addEventListener('resize',listener,{passive:true})
         return ()=>{
             document.removeEventListener('resize',listener)
