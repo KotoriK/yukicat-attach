@@ -79,7 +79,7 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
     const [popperEle, setPopper] = useState<HTMLDivElement>()
     const [showPannel, setShowPannel] = useState(false)
     const [ticker, setTicker] = useState<number>()
-    const { styles } = usePopper(refEle, popperEle, { placement: 'top', modifiers: [{ name: 'eventListeners', options: { resize: showPannel, scroll: showPannel } }] })
+    const { styles,update } = usePopper(refEle, popperEle, { placement: 'top', modifiers: [{ name: 'eventListeners', options: { resize: showPannel, scroll: showPannel } }] })
     /* const setShowPannel = useCallback((value:boolean)=>{
         if(value){
             state.
@@ -87,6 +87,15 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
         _setShowPannel(value)
     },[_setShowPannel]) */
     const pvStyles = usePVStyles()
+    useEffect(()=>{
+        const listener = ()=>{
+            update()
+        }
+        document.addEventListener('resize',listener,{passive:true})
+        return ()=>{
+            document.removeEventListener('resize',listener)
+        }
+    })
     useEffect(() => () => clearTimeout(ticker), [])        //cleaner
     return <>
         <span onClick={() => {
