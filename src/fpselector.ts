@@ -1,6 +1,6 @@
 /**部署样板 */
 import { FacePackage } from 'face-pack/src/FacePackage'
-import FaceSelectorDeployer from 'face-pack/src/FaceSelector/deployer/FaceSelectorDeployer'
+import FaceSelectorDeployer from 'face-pack/src/selector/deployer/FaceSelectorDeployer'
 
 export default (facePackages: FacePackage[]) => {
     const comment = document.querySelector('#comment')
