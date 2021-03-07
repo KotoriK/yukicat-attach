@@ -7,5 +7,7 @@ export default (facePackages: FacePackage[]) => {
     document.querySelectorAll('article.hentry p:not(.ct-respond-form-textarea):not(.form-submit)').forEach(v => {
             display.render(v)  
     })
-    display.render(document.querySelector("#comments > div.comments-main > ul"))
+    document.querySelectorAll('.commentwrap .body > p').forEach(v=>{
+        display.render(v)  
+    })
 }
