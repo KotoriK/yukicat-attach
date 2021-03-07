@@ -42,7 +42,7 @@ const usePannelStyle = createUseStyles(() => {
         },
     }
 })
-const toTime=(time: string | number, secFix: number = 2) =>{
+const toTime = (time: string | number, secFix: number = 2) => {
     const _hour = (typeof time == 'string' ? parseFloat(time) : time) / 3600//second
     const hour = _hour | 0
     const _min = (_hour - hour) * 60
@@ -52,10 +52,9 @@ const toTime=(time: string | number, secFix: number = 2) =>{
     return `${hour > 0 ? `${hour}小时` : ''}${min > 0 ? `${min}分` : ''}${second > 0 ? `${ms > 0 ? second.toFixed(secFix) : second}秒` : ''}`
 }
 const DetailPannel = forwardRef<HTMLDivElement, { data: PVDate, style: CSSProperties, show: boolean }>(
-    ({ data: { hit, avgTOP }, style, show }, ref) =>
-        {
+    ({ data: { hit, avgTOP }, style, show }, ref) => {
         const styles = usePannelStyle()
-        return <div className={styles.popper+' '+styles['opacity-trans']} data-show={show} ref={ref} style={style}>
+        return <div className={styles.popper + ' ' + styles['opacity-trans']} data-show={show} ref={ref} style={style}>
             <li>
                 {`浏览量:${hit}`}
             </li>
@@ -66,7 +65,8 @@ const DetailPannel = forwardRef<HTMLDivElement, { data: PVDate, style: CSSProper
                 <li>
                     {`总浏览时间:${toTime(parseFloat(avgTOP) * parseInt(hit), 0)}`}
                 </li></> : null}
-        </div>}
+        </div>
+    }
 )
 const swrOption = {
     fetcher: (path) => fetch(path).then(r => r.json()), revalidateOnFocus: false, revalidateOnReconnect: false
@@ -79,7 +79,7 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
     const [popperEle, setPopper] = useState<HTMLDivElement>()
     const [showPannel, setShowPannel] = useState(false)
     const [ticker, setTicker] = useState<number>()
-    const { styles,update } = usePopper(refEle, popperEle, { placement: 'top', modifiers: [{ name: 'eventListeners', options: { resize: showPannel, scroll: showPannel } }] })
+    const { styles, update } = usePopper(refEle, popperEle, { placement: 'top', modifiers: [{ name: 'eventListeners', options: { resize: showPannel, scroll: showPannel } }] })
     /* const setShowPannel = useCallback((value:boolean)=>{
         if(value){
             state.
@@ -87,14 +87,13 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
         _setShowPannel(value)
     },[_setShowPannel]) */
     const pvStyles = usePVStyles()
-    useEffect(()=>{
-        const listener = ()=>{
+    useEffect(() => {
+        const listener = () => {
             update()
         }
-        update()
-        document.addEventListener('resize',listener,{passive:true})
-        return ()=>{
-            document.removeEventListener('resize',listener)
+        document.addEventListener('resize', listener, { passive: true })
+        return () => {
+            document.removeEventListener('resize', listener)
         }
     })
     useEffect(() => () => clearTimeout(ticker), [])        //cleaner
@@ -112,7 +111,7 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
     </>
 }
 
-export const initPV=() => {
+export const initPV = () => {
     const colle = document.getElementsByClassName('meta-page-view')
     for (let i = 0; i < colle.length; i++) {
         const e = colle[i],
