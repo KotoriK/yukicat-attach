@@ -35,7 +35,7 @@ const usePannelStyle = createUseStyles(() => {
                 opacity: 1,
                 visibility: "visible",
                 backdropFilter: "blur(3px)",
-            },
+            }, zIndex: 999
         },
         "opacity-trans": {
             transition: "opacity 500ms ease-in-out",
