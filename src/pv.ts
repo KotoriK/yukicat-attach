@@ -1,3 +1,6 @@
 
 import {initPV} from './pageview'
-(initPV)()
+document.addEventListener('pjax:complete', () => {
+    initPV()
+})
+initPV()
