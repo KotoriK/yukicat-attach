@@ -9,31 +9,37 @@ module.exports = merge(common, {
     mode: 'production',
     optimization: {
         minimizer: [new OptimizeCSSAssetsPlugin({}),
-            new TerserPlugin(
-            {test:/\.js$/,terserOptions: {
-                ecma: 2020,}},)
+        new TerserPlugin(
+            {
+                test: /\.js$/, terserOptions: {
+                    ecma: 2015,
+                    module: true,
+                    toplevel: true
+                }
+            })
         ],
         splitChunks: {
-            /* chunks: "all",
-            minSize: 3000,
+            chunks: 'async',
+            minSize: 40000,
+            minRemainingSize: 0,
             minChunks: 1,
-             cacheGroups: {
-                commons: {
+            maxAsyncRequests: 30,
+            maxInitialRequests: 30,
+            maxSize: 330000,
+            cacheGroups: {
+                defaultVendors: {
                     test: /[\\/]node_modules[\\/]/,
-                    // cacheGroupKey here is `commons` as the key of the cacheGroup
-                    name(module, chunks, cacheGroupKey) {
-                      const allChunksNames = chunks.map((item) => item.name).join('~');
-                      return `${cacheGroupKey}-${allChunksNames}`;
-                    }, 
-                styles: {
-                    name: 'styles',
-                    test: /\.css$/,
-                    chunks: 'all',
-                    enforce: true,
+                    priority: -10,
+                    reuseExistingChunk: true,
+                    minChunks: 2,
+                    chunks: "all"
                 },
-            }, 
-        },  */
-    },
+                default: {
+                    priority: -20,
+                    reuseExistingChunk: true,
+                },
+            },
+        },
     },
     module: {
         rules: [
@@ -46,7 +52,7 @@ module.exports = merge(common, {
                             esModule: true,
                         }
                     },
-                    'css-loader','sass-loader'
+                    'css-loader', 'sass-loader'
                     /*  'postcss-loader',
                      , */
                 ],

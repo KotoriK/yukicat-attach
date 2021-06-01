@@ -3,8 +3,9 @@ const webpack = require('webpack')
 module.exports = {
     //入口点
     entry: {
-        post: './src/post.ts',
-        pv: './src/pv.ts'
+        post: {import:'./src/post.ts',dependOn:'vendor'},
+        pv: {import:'./src/pv.ts',dependOn:'vendor'},
+        vendor:['react','react-dom','@popperjs/core','react-popper','jss','react-jss']
     },
     devtool: 'inline-source-map',
     output: {
@@ -83,10 +84,10 @@ module.exports = {
                 ]
             },
         ]
-    }, externals: {
+    }, /* externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    },
+    }, */
     plugins: [
 
 
