@@ -105,9 +105,9 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
 export const initPV = () => {
     const colle = document.getElementsByClassName('meta-page-view')
     for (let i = 0; i < colle.length; i++) {
-        const e = colle[i],
+        const e = colle[i] as HTMLElement,
             path = e.attributes.getNamedItem('data-path')?.value,
-            raw = e.innerHTML
+            raw = e.innerText
         hydrate(<PageView path={path} raw={raw} />, e)
     }
 }
