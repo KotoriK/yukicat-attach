@@ -3,9 +3,7 @@ const webpack = require('webpack')
 module.exports = {
     //入口点
     entry: {
-        post: {import:'./src/post.ts',dependOn:'vendor'},
-        pv: {import:'./src/pv.ts',dependOn:'vendor'},
-        vendor:['react','react-dom','@popperjs/core','react-popper','jss','react-jss']
+        post: './src/post.ts',
     },
     devtool: 'inline-source-map',
     output: {
@@ -14,46 +12,59 @@ module.exports = {
     },// Currently we need to add '.ts' to the resolve.extensions array.
     resolve: {
         extensions: ['.ts', '.tsx', '.js', '.jsx']
-    }, 
-    target: "browserslist",
+    },
+    target: "web",
     module: {
         //处理规则
         rules: [
             //Typescript
-            {
-                test: /\.tsx?$/,
-                use: [
-                    {
-                        loader: "ts-loader",
-                        options: {
-                            allowTsInNodeModules: true
-                        }
-                    }
-                ]
-            },/* {
-                test: /\.scss$/,
-                use: [{
-                    loader: "style-loader" // 将 JS 字符串生成为 style 节点
-                }, {
-                    loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-                }, {
-                    loader: "sass-loader" // 将 Sass 编译成 CSS
-                }]
-              }, */
             /*  {
                  test: /\.tsx?$/,
-                 
                  use: [
                      {
-                         loader: "babel-loader",
-                         options:{
-                             presets:[['@babel/preset-env'],
-                             ['@babel/preset-typescript',{isTSX:true,allExtensions:true}],
-                             ]
+                         loader: "ts-loader",
+                         options: {
+                             allowTsInNodeModules: true
                          }
                      }
                  ]
-             },  */
+             }, *//* {
+               test: /\.scss$/,
+               use: [{
+                   loader: "style-loader" // 将 JS 字符串生成为 style 节点
+               }, {
+                   loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
+               }, {
+                   loader: "sass-loader" // 将 Sass 编译成 CSS
+               }]
+             }, */
+            {
+                test: /\.tsx?$/,
+
+                use: [{
+                    loader: "babel-loader",
+                    options: {
+                        presets: [
+                            "@babel/preset-env", ["@babel/preset-react", {
+                                "runtime": "automatic"
+                            }]
+
+                        ], plugins: [[
+                            'transform-react-remove-prop-types',
+                            {
+                                mode: 'remove', removeImport: true
+                            },
+                        ],]
+                    }
+                },
+                {
+                    loader: "ts-loader",
+                    options: {
+                        allowTsInNodeModules: true
+                    }
+                }
+                ]
+            },
 
             //组件的静态资源
             {
@@ -84,10 +95,10 @@ module.exports = {
                 ]
             },
         ]
-    }, /* externals: {
+    }, externals: {
         "react": "React",
         "react-dom": "ReactDOM"
-    }, */
+    },
     plugins: [
 
 

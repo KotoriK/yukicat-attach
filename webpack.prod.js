@@ -2,13 +2,13 @@ const { merge } = require('webpack-merge');
 const common = require('./webpack.common.js');
 const webpack = require('webpack');
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
+//const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 //const MinifyPlugin = require("babel-minify-webpack-plugin");
 const TerserPlugin = require('terser-webpack-plugin')
 module.exports = merge(common, {
     mode: 'production',
     optimization: {
-        minimizer: [new OptimizeCSSAssetsPlugin({}),
+        minimizer: [/* new OptimizeCSSAssetsPlugin({}), */
         new TerserPlugin(
             {
                 test: /\.js$/, terserOptions: {
@@ -18,7 +18,7 @@ module.exports = merge(common, {
                 }
             })
         ],
-        splitChunks: {
+/*         splitChunks: {
             chunks: 'async',
             minSize: 40000,
             minRemainingSize: 0,
@@ -39,7 +39,7 @@ module.exports = merge(common, {
                     reuseExistingChunk: true,
                 },
             },
-        },
+        }, */
     },
     module: {
         rules: [
