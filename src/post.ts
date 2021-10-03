@@ -8,7 +8,6 @@ function load() {
     display()
     importExternalFacePacks('https://cdn.jsdelivr.net/gh/YukiCat-Dev/yukicat.facepack/facepacks.json')
         .then(fp => { fd(fp); fs(fp); })
-        .finally(() => console.log('post_loaded'))
 }
 document.addEventListener('pjax:complete', () => {
     load()
