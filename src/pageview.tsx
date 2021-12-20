@@ -4,7 +4,6 @@ import { createPortal, hydrate } from 'react-dom'
 import { usePopper } from 'react-popper'
 import { css } from '@emotion/css'
 const API_PREFIX = 'https://yukicat-ga-hit.vercel.app/api/ga/?page='
-const regNumber = /[0-9]{1,}/
 interface PVDate {
     page?: string,
     hit: string,
@@ -87,7 +86,7 @@ export function PageView({ path: path_raw, raw }: { path: string, raw: string })
                 setTicker(undefined)
             }, 5000))
         }} ref={setRefEle} data-raw={raw} className={styleClickable}>
-            {error ? _rawHit.replace(regNumber, '-') : (data ? _rawHit.replace(regNumber, data[0].hit) : _rawHit)}
+            {error ? _rawHit.replace(/\d{1,}/, '-') : (data ? _rawHit.replace(/\d{1,}/, data[0].hit) : _rawHit)}
         </span>
         {createPortal(<DetailPannel ref={setPopper} data={(data && data[0]) || { hit: _rawHit }} style={styles.popper} show={showPannel} />
             , bodyRef)}

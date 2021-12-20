@@ -9,12 +9,8 @@ function load() {
     importExternalFacePacks('https://cdn.jsdelivr.net/gh/YukiCat-Dev/yukicat.facepack/facepacks.json')
         .then(fp => { fd(fp); fs(fp); })
 }
-document.addEventListener('pjax:complete', () => {
-    load()
-})
+document.addEventListener('pjax:complete', load)
 if (document.readyState === 'complete') {
     load()
 } else
-    document.addEventListener('DOMContentLoaded', () => {
-        load()
-    })
+    document.addEventListener('DOMContentLoaded', load)

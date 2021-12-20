@@ -7,7 +7,7 @@ export default (facePackages: FacePackage[]) => {
     if (emotionBox) {
         const comment = document.querySelector('#comment')
         const handleSelect = (pack, face) => (comment as HTMLTextAreaElement).value += `:${pack.id}.${face.id}:`
-        const deployer = new FaceSelectorDeployer({
+        const { switchHide } = new FaceSelectorDeployer({
             facePackages,
             onFaceSelected: handleSelect,
             peakPopperOptions: {
@@ -24,7 +24,7 @@ export default (facePackages: FacePackage[]) => {
 
         }).render().switchHide()
         document.getElementById('emotion-toggle').addEventListener('click', () => {
-            deployer.switchHide()
+            switchHide()
         })
     }
 }
