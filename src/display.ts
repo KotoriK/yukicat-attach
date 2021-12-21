@@ -5,7 +5,6 @@ export default () => {
         import("simple-img-modal/src/deploy.new").then(({ attachListeners, showModal, setContainer }) => {
             attachListeners(imgs)
             setContainer(node)
-            showModal(imgs[0] as any)
         })
     }
 }
