@@ -3676,7 +3676,7 @@
   "version" "3.0.3"
 
 "simple-img-modal@github:KotoriK/simple-img-modal":
-  "resolved" "git+ssh://git@github.com/KotoriK/simple-img-modal.git#23dcd994cb1d2a3b283c83f3548e803417e09703"
+  "resolved" "git+ssh://git@github.com/KotoriK/simple-img-modal.git#fdefe22f4d77dfbf584d7cdd09328da7db5af2ae"
   "version" "1.4.0"
   dependencies:
     "@emotion/css" "^11.1.3"
