@@ -17,27 +17,6 @@ module.exports = {
     module: {
         //处理规则
         rules: [
-            //Typescript
-            /*  {
-                 test: /\.tsx?$/,
-                 use: [
-                     {
-                         loader: "ts-loader",
-                         options: {
-                             allowTsInNodeModules: true
-                         }
-                     }
-                 ]
-             }, *//* {
-               test: /\.scss$/,
-               use: [{
-                   loader: "style-loader" // 将 JS 字符串生成为 style 节点
-               }, {
-                   loader: "css-loader" // 将 CSS 转化成 CommonJS 模块
-               }, {
-                   loader: "sass-loader" // 将 Sass 编译成 CSS
-               }]
-             }, */
             {
                 test: /\.tsx?$/,
 
@@ -78,9 +57,6 @@ module.exports = {
                         }
                     }
                 ]
-            }, {
-                test: /\.html$/,
-                use: ['html-loader']
             },
             {
                 test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
@@ -95,13 +71,8 @@ module.exports = {
                 ]
             },
         ]
-    }, externals: {
-        "react": "React",
-        "react-dom": "ReactDOM"
     },
     plugins: [
-
-
         // 提出公共模块
         /*  new webpack.optimize.CommonsChunkPlugin({
                name: 'React',   // 公共模块名

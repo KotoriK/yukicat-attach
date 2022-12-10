@@ -1,16 +1,14 @@
-import display from './display'
-import fs from './fpselector'
-import fd from './fpdisplay'
+import imageModal from './imageModal'
 import { importExternalFacePacks } from 'face-pack/src/FacePacksImporter'
-import { initPV } from './pageview'
+import { initPV } from 'pageview'
+import { deployRenderer, deploySelector } from 'facepack-solid'
 function load() {
     initPV()
-    display()
+    imageModal()
     importExternalFacePacks('https://cdn.jsdelivr.net/gh/YukiCat-Dev/yukicat.facepack/facepacks.json')
-        .then(fp => { fd(fp); fs(fp); })
+        .then(fp => { deployRenderer(fp); deploySelector(fp); })
 }
 document.addEventListener('pjax:complete', load)
 if (document.readyState === 'complete') {
     load()
-} else
-    document.addEventListener('DOMContentLoaded', load)
+} else { document.addEventListener('DOMContentLoaded', load) }
