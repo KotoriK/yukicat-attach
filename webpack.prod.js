@@ -9,37 +9,40 @@ module.exports = merge(common, {
     mode: 'production',
     optimization: {
         minimizer: [/* new OptimizeCSSAssetsPlugin({}), */
-        new TerserPlugin(
-            {
-                test: /\.js$/, terserOptions: {
-                    ecma: 2015,
-                    module: true,
-                    toplevel: true
-                }
-            })
+            new TerserPlugin(
+                {
+                    test: /\.js$/, terserOptions: {
+                        ecma: 2015,
+                        module: true,
+                        toplevel: true,
+                        compress: {
+                            passes: 2
+                        }
+                    }
+                })
         ],
-/*         splitChunks: {
-            chunks: 'async',
-            minSize: 40000,
-            minRemainingSize: 0,
-            minChunks: 1,
-            maxAsyncRequests: 30,
-            maxInitialRequests: 30,
-            maxSize: 330000,
-            cacheGroups: {
-                defaultVendors: {
-                    test: /[\\/]node_modules[\\/]/,
-                    priority: -10,
-                    reuseExistingChunk: true,
-                    minChunks: 2,
-                    chunks: "all"
-                },
-                default: {
-                    priority: -20,
-                    reuseExistingChunk: true,
-                },
-            },
-        }, */
+        /*         splitChunks: {
+                    chunks: 'async',
+                    minSize: 40000,
+                    minRemainingSize: 0,
+                    minChunks: 1,
+                    maxAsyncRequests: 30,
+                    maxInitialRequests: 30,
+                    maxSize: 330000,
+                    cacheGroups: {
+                        defaultVendors: {
+                            test: /[\\/]node_modules[\\/]/,
+                            priority: -10,
+                            reuseExistingChunk: true,
+                            minChunks: 2,
+                            chunks: "all"
+                        },
+                        default: {
+                            priority: -20,
+                            reuseExistingChunk: true,
+                        },
+                    },
+                }, */
     },
     module: {
         rules: [

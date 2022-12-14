@@ -13,7 +13,7 @@
   "private": true,
   "dependencies": {
     "@emotion/css": "^11.10.5",
-    "@floating-ui/dom": "^1.0.9",
+    "@floating-ui/dom": "^1.0.10",
     "babel-loader": "^9.1.0",
     "babel-plugin-transform-react-remove-prop-types": "^0.4.24",
     "face-pack": "github:KotoriK/facepack-solid",
@@ -21,8 +21,10 @@
     "pageview": "github:YukiCat-Dev/pageview",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "simple-img-lightbox": "github:KotoriK/simple-img-lightbox",
     "simple-img-modal": "github:KotoriK/simple-img-modal",
-    "solid-js": "^1.6.4"
+    "solid-js": "^1.6.5",
+    "vite-template-solid": "github:KotoriK/simple-img-lightbox"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
