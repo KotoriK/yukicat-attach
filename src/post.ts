@@ -1,7 +1,6 @@
 import imageModal from './imageModal'
-import { importExternalFacePacks } from 'face-pack/src/FacePacksImporter'
 import { initPV } from 'pageview'
-import { createFaceRenderer, defaultStyle, deploySelector, FacePackage, setStyleSetting } from 'facepack-solid'
+import { createFaceRenderer, defaultStyle, deploySelector, FacePackage, importExternalFacePacks, setStyleSetting } from 'facepack-solid'
 function load() {
     initPV()
     imageModal()
