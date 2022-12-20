@@ -19,16 +19,13 @@ module.exports = {
         rules: [
             {
                 test: /\.tsx?$/,
-
                 use: [{
                     loader: "babel-loader",
                     options: {
                         presets: [
-                            "@babel/preset-env", ["@babel/preset-react", {
-                                "runtime": "automatic"
-                            }]
-
-                        ], 
+                            "@babel/preset-env"
+                        ],
+                        plugins: ["@emotion"]
                     }
                 },
                 {
@@ -39,32 +36,10 @@ module.exports = {
                 }
                 ]
             },
-
-            //组件的静态资源
             {
-                test: /\.(png|jpg|gif)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            name: 'resource/[name].[ext]'   // 路径
-                        }
-                    }
-                ]
-            },
-            {
-                test: /\.(woff|woff2|eot|ttf|otf|svg)$/,
-                use: [
-                    {
-                        loader: 'url-loader',
-                        options: {
-                            limit: 8192,
-                            name: 'resource/[name].[ext]'   // 路径
-                        }
-                    }
-                ]
-            },
+                test: /\.m?js$/,
+                include: /node_modules/
+            }
         ]
     },
     plugins: [
