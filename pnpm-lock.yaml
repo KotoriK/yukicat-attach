@@ -12,7 +12,7 @@ specifiers:
   facepack-solid: github:KotoriK/facepack-solid
   pageview: github:YukiCat-Dev/pageview
   simple-img-lightbox: github:KotoriK/simple-img-lightbox
-  solid-js: ^1.6.5
+  solid-js: ^1.6.6
   terser-webpack-plugin: ^5.3.6
   ts-loader: ^9.4.2
   typescript: ^4.9.4
@@ -25,10 +25,10 @@ specifiers:
 dependencies:
   '@emotion/css': registry.npmmirror.com/@emotion/css/11.10.5_@babel+core@7.20.5
   '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.0.12
-  facepack-solid: github.com/KotoriK/facepack-solid/489ff866a4e9da8ad22d5b7ffed2fb7b6461757c_cpxdaf2ovfzctagqajr2qp6oce
-  pageview: github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595_cpxdaf2ovfzctagqajr2qp6oce
+  facepack-solid: github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e_psf34suopscgu7bcjj4h4mf2lm
+  pageview: github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595_psf34suopscgu7bcjj4h4mf2lm
   simple-img-lightbox: github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355_@babel+core@7.20.5
-  solid-js: registry.npmmirror.com/solid-js/1.6.5
+  solid-js: registry.npmmirror.com/solid-js/1.6.6
 
 devDependencies:
   '@babel/core': registry.npmmirror.com/@babel/core/7.20.5
@@ -54,9 +54,9 @@ packages:
     version: 0.1.0
     dev: false
 
-  github.com/KotoriK/facepack-solid/489ff866a4e9da8ad22d5b7ffed2fb7b6461757c_cpxdaf2ovfzctagqajr2qp6oce:
-    resolution: {tarball: https://codeload.github.com/KotoriK/facepack-solid/tar.gz/489ff866a4e9da8ad22d5b7ffed2fb7b6461757c}
-    id: github.com/KotoriK/facepack-solid/489ff866a4e9da8ad22d5b7ffed2fb7b6461757c
+  github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e_psf34suopscgu7bcjj4h4mf2lm:
+    resolution: {tarball: https://codeload.github.com/KotoriK/facepack-solid/tar.gz/7f4c0dbc686f119ce64815378ac6e2f1787b613e}
+    id: github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e
     name: facepack-solid
     version: 1.0.0
     peerDependencies:
@@ -66,11 +66,11 @@ packages:
     dependencies:
       '@emotion/css': registry.npmmirror.com/@emotion/css/11.10.5_@babel+core@7.20.5
       '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.0.12
-      solid-js: registry.npmmirror.com/solid-js/1.6.5
+      solid-js: registry.npmmirror.com/solid-js/1.6.6
     dev: false
 
   github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355_@babel+core@7.20.5:
-    resolution: {commit: bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355, repo: git+ssh://git@github.com/KotoriK/simple-img-lightbox.git, type: git}
+    resolution: {tarball: https://codeload.github.com/KotoriK/simple-img-lightbox/tar.gz/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355}
     id: github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355
     name: simple-img-lightbox
     version: 0.0.1
@@ -78,13 +78,13 @@ packages:
       '@emotion/css': registry.npmmirror.com/@emotion/css/11.10.5_@babel+core@7.20.5
       await-res: github.com/KotoriK/await-res/0cd66050c803f41a89c3c48d9be00e8913802ca4
       clsx: registry.npmmirror.com/clsx/1.2.1
-      solid-js: registry.npmmirror.com/solid-js/1.6.5
+      solid-js: registry.npmmirror.com/solid-js/1.6.6
     transitivePeerDependencies:
       - '@babel/core'
     dev: false
 
-  github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595_cpxdaf2ovfzctagqajr2qp6oce:
-    resolution: {commit: 2520c63abb71c2ffb3fc8f3436a63e0950e19595, repo: git+ssh://git@github.com/YukiCat-Dev/pageview.git, type: git}
+  github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595_psf34suopscgu7bcjj4h4mf2lm:
+    resolution: {tarball: https://codeload.github.com/YukiCat-Dev/pageview/tar.gz/2520c63abb71c2ffb3fc8f3436a63e0950e19595}
     id: github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595
     name: pageview
     version: 1.0.0
@@ -95,7 +95,7 @@ packages:
     dependencies:
       '@emotion/css': registry.npmmirror.com/@emotion/css/11.10.5_@babel+core@7.20.5
       '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.0.12
-      solid-js: registry.npmmirror.com/solid-js/1.6.5
+      solid-js: registry.npmmirror.com/solid-js/1.6.6
     dev: false
 
   registry.npmmirror.com/@ampproject/remapping/2.2.0:
@@ -4347,10 +4347,10 @@ packages:
       websocket-driver: registry.npmmirror.com/websocket-driver/0.7.4
     dev: true
 
-  registry.npmmirror.com/solid-js/1.6.5:
-    resolution: {integrity: sha512-q1/wIIRmrWltNnP3PW/e29eRWCC24hX5amBiOXomw2kDiM6JZZ10l+chK/Oi/6ipwUxeabYl5YD2lJOObY9heA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/solid-js/-/solid-js-1.6.5.tgz}
+  registry.npmmirror.com/solid-js/1.6.6:
+    resolution: {integrity: sha512-5x33mEbPI8QLuywvFjQP4krjWDr8xiYFgZx9KCBH7b0ZzypQCHaUubob7bK6i+1u6nhaAqhWtvXS587Kb8DShA==, registry: https://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/solid-js/-/solid-js-1.6.6.tgz}
     name: solid-js
-    version: 1.6.5
+    version: 1.6.6
     dependencies:
       csstype: registry.npmmirror.com/csstype/3.1.1
     dev: false

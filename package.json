@@ -17,7 +17,7 @@
     "facepack-solid": "github:KotoriK/facepack-solid",
     "pageview": "github:YukiCat-Dev/pageview",
     "simple-img-lightbox": "github:KotoriK/simple-img-lightbox",
-    "solid-js": "^1.6.5"
+    "solid-js": "^1.6.6"
   },
   "devDependencies": {
     "@babel/core": "^7.20.5",
