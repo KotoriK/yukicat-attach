@@ -25,7 +25,7 @@ specifiers:
 dependencies:
   '@emotion/css': registry.npmmirror.com/@emotion/css/11.10.5_@babel+core@7.20.5
   '@floating-ui/dom': registry.npmmirror.com/@floating-ui/dom/1.0.12
-  facepack-solid: github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e_psf34suopscgu7bcjj4h4mf2lm
+  facepack-solid: github.com/KotoriK/facepack-solid/db3aa03cb9354660c1ddc05a93b0cae4c7ea689f_psf34suopscgu7bcjj4h4mf2lm
   pageview: github.com/YukiCat-Dev/pageview/2520c63abb71c2ffb3fc8f3436a63e0950e19595_psf34suopscgu7bcjj4h4mf2lm
   simple-img-lightbox: github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355_@babel+core@7.20.5
   solid-js: registry.npmmirror.com/solid-js/1.6.6
@@ -54,9 +54,9 @@ packages:
     version: 0.1.0
     dev: false
 
-  github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e_psf34suopscgu7bcjj4h4mf2lm:
-    resolution: {tarball: https://codeload.github.com/KotoriK/facepack-solid/tar.gz/7f4c0dbc686f119ce64815378ac6e2f1787b613e}
-    id: github.com/KotoriK/facepack-solid/7f4c0dbc686f119ce64815378ac6e2f1787b613e
+  github.com/KotoriK/facepack-solid/db3aa03cb9354660c1ddc05a93b0cae4c7ea689f_psf34suopscgu7bcjj4h4mf2lm:
+    resolution: {tarball: https://codeload.github.com/KotoriK/facepack-solid/tar.gz/db3aa03cb9354660c1ddc05a93b0cae4c7ea689f}
+    id: github.com/KotoriK/facepack-solid/db3aa03cb9354660c1ddc05a93b0cae4c7ea689f
     name: facepack-solid
     version: 1.0.0
     peerDependencies:
@@ -70,7 +70,7 @@ packages:
     dev: false
 
   github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355_@babel+core@7.20.5:
-    resolution: {tarball: https://codeload.github.com/KotoriK/simple-img-lightbox/tar.gz/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355}
+    resolution: {commit: bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355, repo: git+ssh://git@github.com/KotoriK/simple-img-lightbox.git, type: git}
     id: github.com/KotoriK/simple-img-lightbox/bc2ac4de04f6d9e8c8fd6ff782dc7a9683602355
     name: simple-img-lightbox
     version: 0.0.1
