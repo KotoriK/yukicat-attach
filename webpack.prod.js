@@ -12,7 +12,7 @@ module.exports = merge(common, {
             new TerserPlugin(
                 {
                     test: /\.js$/, terserOptions: {
-                        ecma: 2015,
+                        ecma: 2020,
                         module: true,
                         toplevel: true,
                         compress: {
@@ -45,35 +45,35 @@ module.exports = merge(common, {
                 }, */
     },
     module: {
-/*         rules: [
-            //CSS
-            {
-                test: /\.(sa|sc|c)ss$/,
-                use: [
+        /*         rules: [
+                    //CSS
                     {
-                        loader: MiniCssExtractPlugin.loader, options: {
-                            esModule: true,
-                        }
+                        test: /\.(sa|sc|c)ss$/,
+                        use: [
+                            {
+                                loader: MiniCssExtractPlugin.loader, options: {
+                                    esModule: true,
+                                }
+                            },
+                            'css-loader', 'sass-loader',
+                             'postcss-loader',
+                             ,
+                        ],
                     },
-                    'css-loader', 'sass-loader',
-                     'postcss-loader',
-                     ,
-                ],
-            },
-        ] */
+                ] */
     },
     devtool: 'source-map',
     plugins: [
         new webpack.DefinePlugin({
             'process.env.NODE_ENV': JSON.stringify('production')
         }),
-/*         new MiniCssExtractPlugin({
-            // Options similar to the same options in webpackOptions.output
-            // both options are optional
-            filename: '[name].css',
-            chunkFilename: '[id].css',
-
-        }), */ /* new MinifyPlugin({keepFnName:false,keepClassName:false},
+        /*         new MiniCssExtractPlugin({
+                    // Options similar to the same options in webpackOptions.output
+                    // both options are optional
+                    filename: '[name].css',
+                    chunkFilename: '[id].css',
+        
+                }), */ /* new MinifyPlugin({keepFnName:false,keepClassName:false},
             {test:/\.js$/, exclude: /node_modules/,}) */
     ],
 });
