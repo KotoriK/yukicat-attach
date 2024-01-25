@@ -1,9 +1,9 @@
 import imageModal from './imageModal'
-import { initPV } from 'pageview'
-import { createFaceRenderer, defaultStyle, deploySelector, FacePackage, importExternalFacePacks, setStyleSetting } from 'facepack-solid'
+/* import { initPV } from 'pageview'
+ */import { createFaceRenderer, defaultStyle, deploySelector, FacePackage, importExternalFacePacks, setStyleSetting } from 'facepack-solid'
 function load() {
-    initPV()
-    imageModal()
+/*     initPV()
+ */    imageModal()
     importExternalFacePacks('https://cdn.jsdelivr.net/gh/YukiCat-Dev/yukicat.facepack/facepacks.json')
         .then(fp => { deployRenderer(fp); deploySelector(fp); })
 }
