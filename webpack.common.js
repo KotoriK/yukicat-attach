@@ -1,5 +1,5 @@
 const path = require('path');
-const webpack = require('webpack')
+const dayjsPath = path.dirname(require.resolve('dayjs'))
 module.exports = {
     //入口点
     entry: {
@@ -11,7 +11,12 @@ module.exports = {
         filename: '[name].js', module: false
     },// Currently we need to add '.ts' to the resolve.extensions array.
     resolve: {
-        extensions: ['.ts', '.tsx', '.js', '.jsx']
+        extensions: ['.ts', '.tsx', '.js', '.jsx'],
+        alias: {
+            "dayjs/locale": path.resolve(dayjsPath, "esm/locale"),
+            "dayjs/plugin": path.resolve(dayjsPath, "esm/plugin"),
+            "dayjs": path.resolve(dayjsPath, "esm/index.js")
+        }
     },
     target: "web",
     module: {
