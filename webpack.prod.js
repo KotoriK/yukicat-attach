@@ -21,28 +21,12 @@ module.exports = merge(common, {
                     }
                 })
         ],
-        /*         splitChunks: {
-                    chunks: 'async',
-                    minSize: 40000,
-                    minRemainingSize: 0,
-                    minChunks: 1,
-                    maxAsyncRequests: 30,
-                    maxInitialRequests: 30,
-                    maxSize: 330000,
-                    cacheGroups: {
-                        defaultVendors: {
-                            test: /[\\/]node_modules[\\/]/,
-                            priority: -10,
-                            reuseExistingChunk: true,
-                            minChunks: 2,
-                            chunks: "all"
-                        },
-                        default: {
-                            priority: -20,
-                            reuseExistingChunk: true,
-                        },
-                    },
-                }, */
+        splitChunks: {
+            chunks: 'async',
+            minSize: 20000,
+            minRemainingSize: 0,
+            minChunks: 2,
+        }
     },
     module: {
         rules: [

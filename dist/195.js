@@ -1,2 +1,0 @@
-(self.webpackChunkyukicat_attach=self.webpackChunkyukicat_attach||[]).push([[195],{195:(a,t,c)=>{c.r(t),c.d(t,{default:()=>e});var k=c(69),u=c(128);const e=a=>{(0,k.a)(k.d),(0,u.F)(a)}}}]);
-//# sourceMappingURL=195.js.map
